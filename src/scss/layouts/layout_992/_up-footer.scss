@@ -1,0 +1,38 @@
+.up-footer {
+    @include e (wrapper) {
+        width: 950px;
+    }
+    @include e (wrapper) {
+        display: grid;
+        grid-template-columns: repeat(minmax, 5, 1fr);
+        grid-template-rows: repeat(auto-fit, 1, 1fr);
+    }
+    @include e (address) {
+        & a {
+            line-height: 1.25rem;
+        }
+    }
+    @include e (item) {
+        @include m (contact-us) {
+            grid-column: 1;
+            grid-row: 1;
+            max-width: 165px;
+        }
+        @include m (information) {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        @include m (account) {
+            grid-column: 3;
+            grid-row: 1;
+        }
+        @include m (care) {
+            grid-column: 4;
+            grid-row: 1;
+        }
+        @include m (legal) {
+            grid-column: 5;
+            grid-row: 1;
+        }
+    }
+}

@@ -1,0 +1,8 @@
+.info-header {
+    @include e(registration) {
+        &::after {
+            margin-left: 15px;
+            margin-right: 15px;
+        }
+    }
+}

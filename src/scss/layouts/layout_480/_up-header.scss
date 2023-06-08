@@ -1,0 +1,5 @@
+.up-header {
+    @include e (main-number) {
+        display: flex;
+    }
+}

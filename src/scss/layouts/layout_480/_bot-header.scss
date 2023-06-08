@@ -1,0 +1,10 @@
+.bot-header {
+    @include e (phrase-slider) {
+        width: 50%;
+    }
+    @include e (search-bar) {
+        display: flex;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}

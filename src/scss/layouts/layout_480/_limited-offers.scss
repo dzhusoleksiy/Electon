@@ -1,0 +1,28 @@
+.limited-offers {
+    @include e (item) {
+        display: flex;
+        flex-direction: row;
+        @include m (watch) {
+            display: none;
+        }
+        @include m (label) {
+            display: block;
+        }
+        & img {
+            order: -1;
+            align-self: center;
+            width: 45%;
+            max-width: 45%;
+            object-fit: cover;
+            height: 300px;
+        }
+    }
+    @include e (promo) {
+        left: 15px;
+        right: initial;
+    }
+    @include e (content) {
+        width: 40%;
+        margin: 3%;
+    }
+}

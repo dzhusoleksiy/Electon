@@ -1,0 +1,18 @@
+.bot-footer {
+    @include e (wrapper) {
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    @include e (copyright) {
+        padding-bottom: 20px;
+    }
+    @include e (content) {
+        flex-direction: row;
+        justify-content: space-between;
+        padding-top: 20px;
+    }
+    @include e (logo) {
+        margin-left: 30px;
+    }
+}

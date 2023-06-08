@@ -1,0 +1,45 @@
+.top-categories {
+    width: 950px;
+    grid-template-columns: repeat(auto-fit, 6, 1fr);
+    grid-template-rows: repeat(auto-fit, 3, 1fr);
+    @include e (item) {
+        @include m (label) {
+            grid-column: 1 / 7;
+            grid-row: 1;
+        }
+        @include m (gaming) {
+            grid-column: 1 / 4;
+            grid-row: 2 / 4;
+        }
+        @include m (headphones) {
+            grid-column: 4;
+            grid-row: 2;
+        }
+        @include m (earbuds) {
+            grid-column: 5;
+            grid-row: 2;
+        }
+        @include m (laptop) {
+            grid-column: 6;
+            grid-row: 2;
+        }
+        @include m (smart-watch) {
+            grid-column: 4;
+            grid-row: 3;
+        }
+        @include m (phone) {
+            grid-column: 5 / 7;
+            grid-row: 3;
+        }
+    }
+    @include e (image) {
+        & img {
+            height: 195px;
+        }
+        @include m (gaming) {
+            & img {
+                height: 415px;
+            }
+        }
+    }
+}

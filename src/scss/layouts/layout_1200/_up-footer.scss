@@ -1,0 +1,14 @@
+.up-footer {
+    @include e (wrapper) {
+        width: 1200px;
+    }
+    & li {
+        margin-bottom: 25px;
+        & a {
+            &:hover {
+                text-decoration: underline;
+                text-underline-offset: 4px;
+            }
+        }
+    }
+}

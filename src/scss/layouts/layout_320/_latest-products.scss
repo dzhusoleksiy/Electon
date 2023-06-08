@@ -1,0 +1,20 @@
+.latest-products {
+    scroll-margin-top: 45px;
+    @include e (wrapper) {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    @include e (item) {
+        margin-bottom: 15px;
+        @include m (label) {
+            margin-top: 60px;
+            margin-bottom: 35px;
+        }
+        @include m (drive) {
+            margin-bottom: 70px;
+        }
+    }
+    @include e (hover-image) {
+        display: none;
+    }
+}

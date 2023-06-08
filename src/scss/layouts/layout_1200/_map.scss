@@ -1,0 +1,37 @@
+.map {
+    display: none;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgb(56, 56, 56);
+    width: 600px;
+    height: 600px;
+    position: fixed;
+    bottom: 40px;
+    left: 40px;
+    background-color: $textWhite;
+    @include e (button) {
+        & a {
+        position: absolute;
+        top: 15px;
+        right: 15px;
+        font-size: 2rem;
+        color: $backgroundBlue;
+        }
+        &:active {
+            & a {
+            color: $attentionRed;
+            transform: scale(0.85);
+            transition-duration: 150ms;
+            }
+        }
+        &:hover {
+            & a {
+            color: $attentionRed;
+            }
+        }
+    }
+}
+#map {
+    margin: 50px auto;
+    height: 500px;
+    width: 500px;
+}

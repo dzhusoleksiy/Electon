@@ -1,0 +1,227 @@
+.limited-overlay-offers {
+    overflow: hidden;
+    display: none;
+    position: absolute;
+    bottom: -30px;
+    margin-left: -5px;
+    width: 1190px;
+    height: 65vh;
+    z-index: 1;
+    background-color: $textWhite;
+    border: 1px solid $borderGrey;
+    border-radius: 5px;
+    box-shadow: 0 0 30px rgb(56, 56, 56);
+    @include e (item) {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        overflow: hidden;
+    }
+    @include e (button) {
+        position: absolute;
+        right: 49px;
+        top: 24px;
+        & a {
+            position: absolute;
+            font-size: 2rem;
+            color: $backgroundBlue;
+            }
+            &:active {
+                & a {
+                color: $attentionRed;
+                transform: scale(0.85);
+                transition-duration: 150ms;
+                }
+            }
+            &:hover {
+                & a {
+                color: $attentionRed;
+                }
+            }
+    }
+    @include e (name) {
+        text-decoration: none;
+        color: $backgroundBlue;
+        font-family: $baseFontFamily;
+    }
+    @include e (timer-header) {
+        display: inline-block;
+        color: $textGrey;
+        font-family: $baseFontFamily;
+        font-weight: $regularFontWeight;
+        font-size: rem(24px);
+        margin-bottom: 15px;
+        margin-top: 0;
+    }
+    @include e (content) {
+        margin: 5vh 25px 5vh auto;
+        & h3 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: rem(33px);
+        }
+    }
+    @include e (prices) {
+        display: flex;
+        margin-bottom: 15px;
+        font-size: rem(30px);
+        & p {
+            margin-right: 10px;
+            &::before {
+                content: "$";
+            }
+        }
+    }
+    @include e (new-price) {
+        margin-top: 0;
+        margin-bottom: 0;
+        color: $attentionRed;
+        font-weight: $semiBoldFontWeight;
+    }
+    @include e (old-price) {
+        text-decoration: line-through;
+        color: $borderGrey;
+        margin: 0;
+    }
+    @include e (reviews) {
+        margin: 0 0 15px 0;
+        width: fit-content;
+        display: flex;
+        justify-self: center;
+        align-self: center;
+        & i {
+            font-size: rem(22px);
+            margin: 0;
+            cursor: pointer;
+            color: $priceGrey;
+            text-shadow: none;
+            transition: color 200ms,
+            text-shadow 200ms;
+            transition-delay: 0;
+            &:hover ~ i {
+                color: $priceGrey;
+                text-shadow: none;
+                transition: color 200ms,
+                text-shadow 200ms;
+                transition-delay: 0;
+            }
+        }
+        &:hover {
+            & i {
+                color: #fc0;
+            }
+        }
+    }
+    @include e (description) {
+        color: $textGrey;
+        font-family: $baseFontFamily;
+        font-size: rem(14px);
+        font-weight: $regularFontWeight;
+        margin-top: 0;
+        margin-bottom: 15px;
+        line-height: rem(25px);
+    }
+    @include e (buttons) {
+        margin-left: -5px;
+        order: -1;
+        & a {
+            text-decoration: none;
+            color: $priceGrey;
+            display: inline-block;
+            border-radius: 5px;
+            border: 1px solid $borderGrey;
+            padding: 10px;
+            margin: 5px;
+            transition:  all 200ms ease-in-out;
+            &:hover {
+                background-color: $priceGrey;
+                color: $textWhite;
+                border: 1px solid $priceGrey;
+            }
+        }
+        & i {
+            font-size: rem(30px);
+        } 
+    }
+    @include e (timer) {
+        display: flex;
+        margin-left: -5px;
+        margin-bottom: 10px;
+    }
+    @include e (timer-item) {
+        position: relative;
+        border-radius: 5px;
+        background-color: $attentionRed;
+        margin: 5px;
+        width: 100px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        & p:nth-child(1) {
+            color: $textWhite;
+            padding: 10px;
+            margin: 0;
+            font-family: $baseFontFamily;
+            font-size: rem(28px);
+            font-weight: $semiBoldFontWeight;
+        }
+    }
+    @include e (line) {
+        color: $textWhite;
+        font-family: $baseFontFamily;
+        font-size: rem(18px);
+        font-weight: $semiBoldFontWeight;
+        margin: 0 auto 10px auto;
+        text-align: center;
+        text-transform: uppercase;
+    }
+    @include e (promo) {
+        position: absolute;
+        left: 25px;
+        top: 25px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: $textWhite;
+        font-size: rem(18px);
+        font-family: $baseFontFamily;
+        font-weight: $mediumFontWeight;
+        background-color: $backgroundBlue;
+        &::before {
+            content: "-";
+        }
+        &::after {
+            content: "%";
+        }
+    }
+    @include e (ref-image) {
+        order: -1;
+        display: inline-block;
+    }
+    @include e (hover-image) {
+        width: 550px;
+        max-width: 550;
+        height: 65vh;
+        transition: background-image 0.4s ease-in-out;
+        @include m (mouse) {
+            background: url("#{$i}products/offer-mouse-1.png") no-repeat;
+            background-size: cover;
+            background-position: center;
+            &:hover {
+                background: url("#{$i}products/offer-mouse-2.png") no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+        @include m (watch) {
+            background: url("#{$i}products/offer-watch-1.png") no-repeat;
+            background-size: cover;
+            background-position: center;
+            &:hover {
+                background: url("#{$i}products/offer-watch-2.png") no-repeat;
+                background-size: cover;
+                background-position: center;
+            }
+        }
+    }
+}

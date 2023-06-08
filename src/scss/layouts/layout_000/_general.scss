@@ -1,5 +1,6 @@
 html {
   @include getCssVar(font-size);
+  scroll-behavior: smooth;
 }
 
 body {

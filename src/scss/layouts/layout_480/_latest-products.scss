@@ -1,0 +1,34 @@
+.latest-products {
+    @include e (wrapper) {
+        grid-template-columns: repeat(auto-fit, 2, fr);
+        grid-template-rows: repeat(auto-fit, 3, 1fr);
+        gap: 10px;
+    }
+    @include e (item) {
+        @include m (label) {
+            grid-column: 1 / 3;
+            grid-row: 1;
+        }
+        @include m (buds) {
+            margin-bottom: 0;
+            grid-column: 1;
+            grid-row: 2;
+        }
+        @include m (drive) {
+            margin-bottom: 25px;
+            grid-column: 1;
+            grid-row: 3;
+        }
+        @include m (grinder) {
+            display: flex;
+            grid-column: 2;
+            grid-row: 2;
+        }
+        @include m (camera) {
+            margin-bottom: 25px;
+            display: flex;
+            grid-column: 2;
+            grid-row: 3;
+        }
+    }
+}

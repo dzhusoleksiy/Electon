@@ -1,0 +1,17 @@
+.up-header {
+    @include e (wrapper) {
+        height: 70px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    @include e (site-name) {
+        display: flex;
+        align-self: center;
+    }
+    @include e (main-number) {
+        display: none;
+    }
+    @include e (ext-menu) {
+        display: none;
+    }
+}

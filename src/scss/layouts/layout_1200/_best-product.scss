@@ -1,0 +1,25 @@
+.best-product {
+    @include e (video) {
+        display: block;
+        width: 600px;
+        height: 340px;
+        align-self: center;
+    }
+    @include e (wrapper) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        width: 1200px;
+    }
+    @include e (content) {
+        text-align: center;
+        align-self: center;
+    }
+    @include e (description) {
+        width: 500px;
+    }
+    @include e (button) {
+        display: flex;
+        align-self: center;
+    }
+}

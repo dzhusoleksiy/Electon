@@ -1,0 +1,34 @@
+.bot-footer {
+    background-color: $backgroundBlue;
+    @include e (logo-payment) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;  
+    }
+    @include e (content) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @include e (copyright) {
+        color: $textWhite;
+        font-family: $baseFontFamily;
+        font-size: rem(14px);
+        font-weight: $regularFontWeight;
+        margin-top: 15px;
+        margin-bottom: 15px;
+    }
+    @include e (logo) {
+        width: 40%;
+        margin-bottom: 15px;
+        & img {
+            width: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+    @include e (payment-methods) {
+        margin-bottom: 15px;
+        display: flex;
+    }
+}

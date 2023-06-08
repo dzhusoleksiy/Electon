@@ -1,0 +1,79 @@
+@import url("https://fonts.googleapis.com/css?family=Montserrat&display=swap");
+.main-slider {
+    margin-top: 15px;
+    @include e (banner) {
+        height: 520px;
+        max-width: 1175px;
+        & img {
+            height: 520px;
+        }
+    }
+    @include e(content) {
+        visibility: hidden;
+        opacity: 0;
+        transition: visibility 0s 0.5s, opacity 0.5s linear;
+        position: absolute;
+        width: 270px;
+        top: 95px;
+        left: 70px;
+    }
+    @include e(text) {
+        font-size: rem(24px);
+    }
+    @include e (header) {
+        font-size: rem(70px);
+    }
+    @include e (button) {
+        & a {
+            padding: 15px 22px;
+            font-size: rem(18px);
+        }
+    }
+    @include e (arrow) {
+        margin: 10px;
+        width: 40px;
+        height: 40px;
+    }
+    @include e (arrows) {
+        top: 660px;
+    }
+}
+@keyframes fade-in {
+    100% {
+      opacity: 1;
+      filter: blur(0);
+    }
+}
+@keyframes scale {
+    100% {
+      transform: scale(1);
+    }
+}  
+.slick-current {
+    .main-slider__content {
+        visibility: visible;
+        opacity: unset;
+        transition: none;
+        transform: scale(0.94);
+        animation: scale 3s forwards cubic-bezier(0.5, 1, 0.89, 1);
+        & p {
+            display: inline-block;
+            opacity: 0;
+            filter: blur(4px);
+            &:nth-child(1) {
+                animation: fade-in 0.8s 0.3s forwards cubic-bezier(0.11, 0, 0.5, 0);
+            }
+            &:nth-child(2) {
+                animation: fade-in 0.8s 0.6s forwards cubic-bezier(0.11, 0, 0.5, 0);
+            }
+        }
+        & button {
+            display: inline-block;
+            opacity: 0;
+            filter: blur(4px);
+            animation: fade-in 0.8s 0.9s forwards cubic-bezier(0.11, 0, 0.5, 0);
+        }
+    }
+}
+
+

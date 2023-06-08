@@ -1,0 +1,12 @@
+.limited-offers {
+    @include e (item) {
+        & img {
+            order: -1;
+            align-self: center;
+            width: 55%;
+            max-width: 55%;
+            object-fit: cover;
+            height: 300px;
+        }
+    }
+}

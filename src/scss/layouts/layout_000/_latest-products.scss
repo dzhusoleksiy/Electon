@@ -1,0 +1,230 @@
+.latest-products {
+    background-color: $backgroundGrey;
+    @include e (wrapper) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 1, fr);
+        grid-template-rows: repeat(auto-fit, 3, 1fr);
+    }
+    @include e (quick-view) {
+        display: none;
+    }
+    @include e (item) {
+        border-radius: 5px;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        @include m (label) {
+            display: initial;
+            grid-column: 1;
+            grid-row: 1;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            & h2 {
+                margin: 0;
+                color: $textGrey;
+                font-family: $baseFontFamily;
+                font-size: rem(24px);
+                font-weight: $semiBoldFontWeight;
+            }
+        }
+        @include m (buds) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        @include m (drive) {
+            grid-column: 1;
+            grid-row: 3;
+        }
+        @include m (grinder) {
+            display: none;
+        }
+        @include m (camera) {
+            display: none;
+        }
+        @include m (notebook) {
+            display: none;
+        }
+        @include m (speakers) {
+            display: none;
+        }
+        @include m (wireless-buds) {
+            display: none;
+        }
+        @include m (game) {
+            display: none;
+        }
+    }
+    @include e (promo) {
+        display: initial;
+        position: absolute;
+        right: 20px;
+        top: 20px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: $textWhite;
+        font-size: rem(12px);
+        font-family: $baseFontFamily;
+        font-weight: $mediumFontWeight;
+        background-color: $backgroundBlue;
+        &::before {
+            content: "-";
+        }
+        &::after {
+            content: "%";
+        }
+        @include m (drive) {
+            display: none;
+        }
+    }
+    @include e (content) {
+        display: flex;
+        flex-direction: column;
+        background-color: $textWhite;
+        text-align: center;
+        & a {
+            text-decoration: none;
+        }
+    }
+    @include e (buttons) {
+        order: -1;
+        & a {
+            text-decoration: none;
+            color: $priceGrey;
+            display: inline-block;
+            padding: 6px;
+            margin: 3px;
+            border-radius: 5px;
+            border: 1px solid $borderGrey;
+        }
+    }
+    @include e (name) {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        color: $backgroundBlue;
+        font-family: $baseFontFamily;
+        font-size: rem(16px);
+        font-weight: $mediumFontWeight;
+    }
+    @include e (new-price) {
+        margin-top: 0;
+        margin-bottom: 0;
+        color: $attentionRed;
+        font-weight: $semiBoldFontWeight;
+        &::before {
+            content: "$";
+        }
+    }
+    @include e (old-price) {
+        text-decoration: line-through;
+        color: $borderGrey;
+        margin: 0;
+        &::before {
+            content: "$";
+        }
+        @include m (drive) {
+            visibility: hidden;
+            &::before {
+                content: none;
+            }
+        }
+    }
+    @include e (reviews) {
+        margin: 15px 0 20px 0;
+        width: fit-content;
+        display: flex;
+        justify-self: center;
+        align-self: center;
+        & i {
+            font-size: rem(18px);
+            margin: 0;
+            color: $priceGrey;
+        }
+    }
+    @include e (image) {
+        order: -1;
+        width: 100%;
+        max-width: 100%;
+        height: 310px;
+        object-fit: cover;
+    }
+    @include e (ref-image) {
+        order: -1;
+        display: inline-block;
+    }
+    @include e (hover-image) {
+        width: 272.5px;
+        max-width: 272.5px;
+        height: 266.44px;
+        transition: background-image 0.4s ease-in-out;
+        @include m (buds) {
+            background: url("#{$i}products/product-offer-buds-1-1.png") no-repeat;
+            background-size: cover;
+            &:hover {
+                background: url("#{$i}products/product-buds-1-2.png") no-repeat;
+                background-size: cover;
+            }
+        }
+        @include m (grinder) {
+            background: url("#{$i}products/product-grinder-1.png") no-repeat;
+            background-size: cover;
+            &:hover {
+                background: url("#{$i}products/product-grinder-2.png") no-repeat;
+                background-size: cover;
+            }
+        }
+        @include m (drive) {
+            background: url("#{$i}products/product-drive-1.png") no-repeat;
+            background-size: cover;
+            &:hover {
+                background: url("#{$i}products/product-drive-2.png") no-repeat;
+                background-size: cover;
+            }
+        }
+        @include m (camera) {
+            background: url("#{$i}products/product-camera-1.png") no-repeat;
+            background-size: cover;
+            &:hover {
+                background: url("#{$i}products/product-camera-2.png") no-repeat;
+                background-size: cover;
+            }
+        }
+        @include m (notebook) {
+            background: url("#{$i}products/product-laptop-1.png") no-repeat;
+            background-size: cover;
+            &:hover {
+                background: url("#{$i}products/product-laptop-2.png") no-repeat;
+                background-size: cover;
+            }
+        }
+        @include m (speakers) {
+            background: url("#{$i}products/product-spaker-1.png") no-repeat;
+            background-size: cover;
+            &:hover {
+                background: url("#{$i}products/product-spaker-2.png") no-repeat;
+                background-size: cover;
+            }
+        }
+        @include m (wireless-buds) {
+            background: url("#{$i}products/product-buds-2-1.png") no-repeat;
+            background-size: cover;
+            &:hover {
+                background: url("#{$i}products/product-buds-2-2.png") no-repeat;
+                background-size: cover;
+            }
+        }
+        @include m (game) {
+            background: url("#{$i}products/product-xbox-1.png") no-repeat;
+            background-size: cover;
+            &:hover {
+                background: url("#{$i}products/product-xbox-2.png") no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}
+
+

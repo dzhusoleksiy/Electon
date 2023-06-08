@@ -1,0 +1,1289 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Electon</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link rel="stylesheet" href="css/style.css"/>
+    <link rel="shortcut icon" href="favicon.ico?">
+    <script src="https://kit.fontawesome.com/3b15a9f7b1.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+     crossorigin=""/>
+     <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM="
+     crossorigin=""></script>
+  </head>
+  <body>
+
+  <!-- Header -->
+  <header>
+    <div class="up-header">
+      <div class="up-header__wrapper">      
+        <h1 class="up-header__site-name"><span class="sr-only">Electon</span></h1>
+        <div class="up-header__site-logo"><img src="i/logo-itself.png"></div>
+
+        <nav  class="up-header__ext-navigation">
+            <ul  class="up-header__ext-menu">
+              <li class="up-header__menu-item has-submenu">
+                <div class="up-header__menu-link is-submenu">
+                  <a href="#">Home</a>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 384 512"><path d="M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+                </div>
+                <ul class="up-header__submenu">
+                  <li><a href="#top-categories">Top categories</a></li>
+                  <li><a href="#latest-products">Latest products</a></li>
+                  <li><a href="#limited-offers">Limited offers</a></li>
+                </ul>
+              </li>
+              <li class="up-header__menu-item has-submenu">
+                <div class="up-header__menu-link is-submenu">
+                  <a href="#">Shop</a>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 384 512"><path d="M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+                </div>
+                <ul class="up-header__submenu">
+                  <li class="map-button"><a href="#">Shops in your town</a></li>
+                  <li><a href="#">Pre-order</a></li>
+                  <li><a href="#">Guarantee</a></li>
+                </ul>
+              </li>
+              <li class="up-header__menu-item has-submenu">
+                <div class="up-header__menu-link is-submenu">
+                  <a href="#">Collection</a>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 384 512"><path d="M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+                </div>
+                <ul class="up-header__submenu">
+                  <li><a href="#">Gallery</a></li>
+                  <li><a href="#">News</a></li>
+                </ul>
+              </li>
+              <li class="up-header__menu-item has-submenu">
+                <div class="up-header__menu-link is-submenu">
+                  <a href="#">Pages</a>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewbox="0 0 384 512"><path d="M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+                </div>
+                <ul class="up-header__submenu">
+                  <li><a href="#">Abouts us</a></li>
+                  <li><a href="#">Contact us</a></li>
+                  <li><a href="#">Return policy</a></li>
+                  <li><a href="#">Shipping</a></li>
+                </ul>
+              </li>
+              <li class="up-header__menu-item has-submenu">
+                <a class="up-header__blog" href="#">Blog</a>
+              </li>
+            </ul>
+          </nav>
+
+        <div class="up-header__compr-menu-button">
+          <a href="#"><i class="fa-solid fa-bars"></i></a>
+        </div>
+        <div class="up-header__overlay-navigation">
+          <div class="up-header__compr-menu-button in-overlay">
+            <a href="#"><i class="fa-solid fa-xmark"></i></a>
+          </div>
+          <nav>
+              <ul class="up-header__overlay-menu">
+                  <li class="up-header__overlay-item has-overlay-submenu">
+                    <div class="up-header__overlay-link is-overlay-submenu">
+                      <a href="#">Home</a>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 384 512"><path d="M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+                    </div>
+                    <ul class="ul-overlay-submenu">
+                      <li class="scroll-to"><a href="#top-categories">Top categories</a></li>
+                      <li class="scroll-to"><a href="#latest-products">Latest products</a></li>
+                      <li class="scroll-to"><a href="#limited-offers">Limited offers</a></li>
+                    </ul>
+                  </li>
+                  <li class="up-header__overlay-item has-overlay-submenu">
+                    <div  class="up-header__overlay-link is-overlay-submenu">
+                      <a href="#">Shop</a>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 384 512"><path d="M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+                    </div>
+                    <ul class="ul-overlay-submenu">
+                      <li  class="map-button"><a href="#">Shops in your town</a></li>
+                      <li><a href="#">Pre-order</a></li>
+                      <li><a href="#">Guarantee</a></li>
+                    </ul>
+                  </li>
+                  <li class="up-header__overlay-item has-overlay-submenu">
+                    <div  class="up-header__overlay-link is-overlay-submenu">
+                      <a href="#">Collection</a>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 384 512"><path d="M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+                    </div>
+                    <ul class="ul-overlay-submenu">
+                      <li><a href="#">Gallery</a></li>
+                      <li><a href="#">News</a></li>
+                    </ul>
+                  </li>
+                  <li class="up-header__overlay-item has-overlay-submenu">
+                    <div  class="up-header__overlay-link is-overlay-submenu">
+                      <a href="#">Pages</a>
+                      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewbox="0 0 384 512"><path d="M169.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L192 274.7 54.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z"/></svg>
+                    </div>
+                    <ul class="ul-overlay-submenu">
+                      <li><a href="#">Abouts us</a></li>
+                      <li><a href="#">Contact us</a></li>
+                      <li><a href="#">Return policy</a></li>
+                      <li><a href="#">Shipping</a></li>
+                    </ul>
+                  </li>
+                  <li class="up-header__overlay-item">
+                    <a href="#">Blog</a>
+                  </li>
+              </ul>
+          </nav>
+        </div>
+        <div class="up-header__compr-cart-button">
+          <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+        </div>
+        <div class="up-header__overlay-cart">
+          <div class="up-header__compr-cart-button in-overlay">
+            <a href="#"><i class="fa-solid fa-xmark"></i></a>
+          </div>
+          <div class="up-header__cart-content">
+            <div class="up-header__cart-header">
+              <p>Your cart is empty!</p>
+            </div>
+            <div class="up-header__cart-list"></div>
+            <div class="up-header__cart-buttons">
+              <button class="up-header__cart-buttons_shopping">continue shopping</button>
+              <button class="up-header__cart-buttons_checkout">checkout</button>
+            </div>
+          </div>
+        </div>
+        <div class="up-header__main-number">
+          <div class="up-header__number-image">
+            <img src="i/contact-icon.png" alt="contact icon">
+          </div>
+          <div class="up-header__number-itself">
+          <p>
+            <a href="tel:(+92) 0123 456 789" title="tel:(+92) 0123 456 789">(+92) 0123 456 789</a>
+          </p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="bot-header">
+      <div class="bot-header__wrapper">
+        <div class="bot-header__categories-wrapper">
+          <div class="bot-header__categories">
+            <a href="#">top categories</a>
+            <i class="fa-solid fa-bars"></i>
+          </div>
+          <div class="bot-header__categories-menu">
+            <ul class="bot-header__categories-list">
+              <li class="bot-header__categories-item bot-header__has-submenu">
+                <a href="#">Laptops, Tablets & PCs</a>
+                <ul>
+                  <li class="bot-header__categories-item bot-header__has-submenu">
+                    <a href="#">Notebooks</a>
+                    <ul>
+                      <li><a href="#">Laptops</a></li>
+                      <li><a href="#">Allround Laptops</a></li>
+                      <li><a href="#">Business Laptops</a></li>
+                      <li><a href="#">Gaming Laptops</a></li>
+                      <li><a href="#">Office Laptops</a></li>
+                      <li><a href="#">Ultrabooks</a></li>
+                    </ul>
+                  </li>
+                  <li class="bot-header__categories-item bot-header__has-submenu">
+                    <a href="#">Desktop PCs</a>
+                    <ul>
+                      <li><a href="#">Allround PC</a></li>
+                      <li><a href="#">Business PC</a></li>
+                      <li><a href="#">Gaming PC</a></li>
+                    </ul>
+                  </li>
+                  <li class="bot-header__categories-item bot-header__has-submenu">
+                    <a href="#">Servers</a>
+                    <ul>
+                      <li><a href="#">Server parts</a></li>
+                      <li><a href="#">Accessories</a></li>
+                    </ul>
+                  </li>
+                  <li class="bot-header__categories-item bot-header__has-submenu">
+                    <a href="#">Tablet PCs</a>
+                    <ul>
+                      <li><a href="#">Amazon Kindle</a></li>
+                      <li><a href="#">Android Tablets</a></li>
+                      <li><a href="#">Apple Tablets</a></li>
+                      <li><a href="#">Accessories</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="bot-header__categories-item bot-header__has-submenu">
+                <a href="#">Computer & Office</a>
+                <ul>
+                  <li><a href="#">Monitors</a></li>
+                  <li><a href="#">Printers</a></li>
+                  <li><a href="#">Scanners</a></li>
+                  <li><a href="#">Stationery</a></li>
+                  <li><a href="#">Input Devices</a></li>
+                </ul>
+              </li>
+              <li class="bot-header__categories-item bot-header__has-submenu">
+                <a href="#">Hardware & Components</a>
+                <ul>
+                  <li class="bot-header__categories-item bot-header__has-submenu">
+                    <a href="#">PC Components</a>
+                    <ul>
+                      <li><a href="#">Processors</a></li>
+                      <li><a href="#">Graphics Cards</a></li>
+                      <li><a href="#">Motherboards</a></li>
+                      <li><a href="#">Memory</a></li>
+                      <li><a href="#">Power Supplies</a></li>
+                      <li><a href="#">Sound Cards</a></li>
+                    </ul>
+                  </li>
+                  <li class="bot-header__categories-item bot-header__has-submenu">
+                    <a href="#">Hard Drives</a>
+                    <ul>
+                      <li><a href="#">SSD</a></li>
+                      <li><a href="#">HDD</a></li>
+                      <li><a href="#">External Drives</a></li>
+                    </ul>
+                  </li>
+                  <li class="bot-header__categories-item bot-header__has-submenu">
+                    <a href="#">Cases</a>
+                    <ul>
+                      <li><a href="#">Lighting</a></li>
+                      <li><a href="#">Computer Tool Kits</a></li>
+                      <li><a href="#">Computer Cases</a></li>
+                    </ul>
+                  </li>
+                  <li class="bot-header__categories-item bot-header__has-submenu">
+                    <a href="#">Cooling</a>
+                    <ul>
+                      <li><a href="#">Thermal Paste for CPU</a></li>
+                      <li><a href="#">Water Cooling</a></li>
+                      <li><a href="#">CPU Coolers</a></li>
+                      <li><a href="#">Cooling for cases</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li class="bot-header__categories-item bot-header__has-submenu">
+                <a href="#">Smartphones</a>
+                <ul>
+                  <li><a href="#">Mobile Phones</a></li>
+                  <li><a href="#">Accessories</a></li>
+                  <li><a href="#">Miscellaneous</a></li>
+                </ul>
+              </li>
+              <li class="bot-header__categories-item bot-header__has-submenu">
+                <a href="#">Games & Entertainment</a>
+                <ul>
+                  <li class="bot-header__categories-item bot-header__has-submenu">
+                    <a href="#">Sony Playstation</a>
+                    <ul>
+                      <li><a href="#">Playstation Consoles</a></li>
+                      <li><a href="#">Playstation Games</a></li>
+                      <li><a href="#">Playstation Accessories</a></li>
+                    </ul>
+                  </li>
+                  <li class="bot-header__categories-item bot-header__has-submenu">
+                    <a href="#">Nintendo Switch</a>
+                    <ul>
+                      <li><a href="#">Nintendo Consoles</a></li>
+                      <li><a href="#">Nintendo Games</a></li>
+                      <li><a href="#">Nintendo Accessories</a></li>
+                    </ul>
+                  </li>
+                  <li class="bot-header__categories-item bot-header__has-submenu">
+                    <a href="#">Xbox</a>
+                    <ul>
+                      <li><a href="#">Xbox Consoles</a></li>
+                      <li><a href="#">Xbox Games</a></li>
+                      <li><a href="#">Xbox Accessories</a></li>
+                    </ul>
+                  </li>
+                  <li class="bot-header__categories-item bot-header__has-submenu">
+                    <a href="#">Merchandise</a>
+                    <ul>
+                      <li><a href="#">Figures</a></li>
+                      <li><a href="#">Posters</a></li>
+                      <li><a href="#">Clothing</a></li>
+                    </ul>
+                  </li>
+                  <li class="bot-header__categories-item bot-header__has-submenu">
+                    <a href="#">Gaming Accessories</a>
+                    <ul>
+                      <li><a href="#">Gaming Chairs</a></li>
+                      <li><a href="#">Virtual Relity</a></li>
+                      <li><a href="#">Gamepads</a></li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="bot-header__phrase-slider phrase-slider" id="phrase-slider">
+          <div class="slider-item">
+            <div class="bot-header__phrase-item">
+              <i class="fa-solid fa-truck"></i>
+              <p>free shipping</p>
+            </div>
+          </div>
+          <div class="slider-item">
+            <div class="bot-header__phrase-item">
+              <i class="fa-solid fa-lock"></i>
+              <p>secure payment</p>
+            </div>
+          </div>
+          <div class="slider-item">
+            <div class="bot-header__phrase-item">
+              <i class="fa-solid fa-gift"></i>
+              <p>gift voucher</p>
+            </div>
+          </div>
+          <div class="slider-item">
+            <div class="bot-header__phrase-item">
+              <i class="fa-solid fa-medal"></i>
+              <p>best quality</p>
+            </div>
+          </div>
+        </div>
+        <div class="bot-header__search-bar">
+          <form class="bot-header__form">
+            <input class="bot-header__input" placeholder="Search..." type="text">
+            <button class="bot-header__search-button" type="submit">
+              <a href="#"><i class="fa-solid fa-magnifying-glass"></i></a>
+            </button>
+          </form>
+        </div>
+        <div class="bot-header__cart-wrapper">
+          <div class="bot-header__ext-cart">
+            <i class="fa-solid fa-cart-shopping"></i>
+            <p>0 item - $0.00</p>
+          </div>
+          <div class="bot-header__cart-menu">
+            <div class="bot-header__cart-header">
+              <p>Your cart is empty!</p>
+            </div>
+            <div class="bot-header__cart-list"></div>
+            <button class="bot-header__checkout-button"><a href="#">checkout</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="info-header">
+      <div class="info-header__wrapper">
+        <div class="info-header__help-number">
+          <p>Need help? Call us: <a href="tel:(+92) 0123 456 789" title="tel:(+92) 0123 456 789">(+92) 0123 456 789</a></p>
+        </div>
+        <div class="info-header__warranty-shipping">
+          <p>With warranty & free shipping for above $78.00</p>
+        </div>
+        <div class="info-header__registration">
+          <i class="fa-solid fa-user"></i>
+          <a href="#">Sign in</a>
+        </div>
+        <div class="info-header__wishlist">
+          <i class="fa-solid fa-heart"></i>
+          <a href="#">Wishlist</a>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Slider -->
+  <article>
+    <div class="main-slider" id="main-slider">
+      <div class="slider-item">
+        <div class="main-slider__item-wrapper">
+          <div class="main-slider__content">
+            <p class="main-slider__text">For your comfort</p>
+            <p class="main-slider__header">Portable devices</p>
+            <button class="main-slider__button"><a href="#">explore now</a></button>
+          </div>
+          <div class="main-slider__banner">
+            <a href="#">
+              <picture>
+                <source media="(max-width: 767px)" srcset="i/banner-phone/banner-phone-480.png, i/banner-phone/banner-phone-960.png 2x, i/banner-phone/banner-phone-1440.png 3x"/>
+                <source media="(max-width: 1199px)" srcset="i/banner-phone/banner-phone-800.png, i/banner-phone/banner-phone-1200.png 2x, i/banner-phone/banner-phone-1800.png 3x"/>
+                <source media="(min-width: 1200px)" srcset="i/banner-phone/banner-phone-1200.png, i/banner-phone/banner-phone-2400.png 2x"/>
+                <img src="i/banner-phone/banner-phone.png" alt="phone banner">
+              </picture>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-item">
+        <div class="main-slider__item-wrapper">
+          <div class="main-slider__content">
+            <p class="main-slider__text">Wear the better</p>
+            <p class="main-slider__header">Precious time</p>
+            <button class="main-slider__button"><a href="#">explore now</a></button>
+          </div>
+          <div class="main-slider__banner">
+            <a href="#">
+              <picture>
+                <source media="(max-width: 767px)" srcset="i/banner-watch/banner-watch-480.png, i/banner-watch/banner-watch-960.png 2x, i/banner-watch/banner-watch-1440.png 3x"/>
+                <source media="(max-width: 1199px)" srcset="i/banner-watch/banner-watch-800.png, i/banner-watch/banner-watch-1200.png 2x, i/banner-watch/banner-watch-1800.png 3x"/>
+                <source media="(min-width: 1200px)" srcset="i/banner-watch/banner-watch-1200.png, i/banner-watch/banner-watch-2400.png 2x"/>
+                <img src="i/banner-watch/banner-watch.png" alt="watch banner">
+              </picture>
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="slider-item">
+        <div class="main-slider__item-wrapper">
+          <div class="main-slider__content">
+            <p class="main-slider__text">Fabulous styling</p>
+            <p class="main-slider__header">Prove it yourself</p>
+            <button class="main-slider__button"><a href="#">explore now</a></button>
+          </div>
+          <div class="main-slider__banner">
+            <a href="#">
+              <picture>
+                <source media="(max-width: 767px)" srcset="i/banner-hair-dryer/banner-hair-dryer-480.png, i/banner-hair-dryer/banner-hair-dryer-960.png 2x, i/banner-hair-dryer/banner-hair-dryer-1440.png 3x"/>
+                <source media="(max-width: 1199px)" srcset="i/banner-hair-dryer/banner-hair-dryer-800.png, i/banner-hair-dryer/banner-hair-dryer-1200.png 2x, i/banner-hair-dryer/banner-hair-dryer-1800.png 3x"/>
+                <source media="(min-width: 1200px)" srcset="i/banner-hair-dryer/banner-hair-dryer-1200.png, i/banner-hair-dryer/banner-hair-dryer-2400.png 2x"/>
+                <img src="i/banner-hair-dryer/banner-hair-dryer.png" alt="hair-dryer banner">
+              </picture>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="main-slider__arrows"></div>
+  </article>
+
+  <!-- Top categories -->
+  <section>
+    <div class="top-categories" id="top-categories">
+
+      <div class="top-categories__item top-categories__item_label">
+        <h2>Top categories</h2>
+      </div>
+
+      <div class="top-categories__item top-categories__item_gaming">
+        <div class="top-categories__content top-categories__content_gaming">
+          <h3 class="top-categories__product-name top-categories__product-name_gaming"><a href="#">Xbox Series S / X</a></h3>
+          <p class="top-categories__category">Electronics / gaming</p>
+          <p class="top-categories__price top-categories__price_gaming">299$ / 499$</p>
+        </div>
+        <button class="top-categories__arrow">
+          <a href="#"><i class="fa-solid fa-arrow-right"></i></a>
+        </button>
+        <div class="top-categories__image top-categories__image_gaming">
+          <a href="#">
+            <picture>
+              <source media="(max-width: 767px)" srcset="i/category-xbox/category-xbox-480.png, i/category-xbox/category-xbox-960.png 2x, i/category-xbox/category-xbox-1440.png 3x"/>
+              <source media="(max-width: 1199px)" srcset="i/category-xbox/category-xbox-800.png, i/category-xbox/category-xbox-1200.png 2x, i/category-xbox/category-xbox-1800.png 3x"/>
+              <source media="(min-width: 1200px)" srcset="i/category-xbox/category-xbox-1200.png, i/category-xbox/category-xbox-2400.png 2x"/>
+              <img src="i/category-xbox/category-xbox.png" alt="gaming category">
+            </picture>
+          </a>
+        </div>
+        <img>
+      </div>
+
+      <div class="top-categories__item top-categories__item_headphones">
+        <div class="top-categories__content top-categories__content_headphones">
+          <a href="#"><h3 class="top-categories__product-name top-categories__product-name_headphones">Headphones</h3></a>
+          <p class="top-categories__price top-categories__price_headphones"></p>
+        </div>
+        <div class="top-categories__image top-categories__image_headphones">
+            <picture>
+              <source media="(max-width: 767px)" srcset="i/category-headphones/category-headphones-480.png, i/category-headphones/category-headphones-960.png 2x, i/category-headphones/category-headphones-1440.png 3x"/>
+              <source media="(max-width: 1199px)" srcset="i/category-headphones/category-headphones-800.png, i/category-headphones/category-headphones-1200.png 2x, i/category-headphones/category-headphones-1800.png 3x"/>
+              <source media="(min-width: 1200px)" srcset="i/category-headphones/category-headphones-1200.png, i/category-headphones/category-headphones-2400.png 2x"/>
+              <img src="i/category-headphones/category-headphones.png" alt="headphones category">
+            </picture>
+        </div>
+      </div>
+
+      <div class="top-categories__item top-categories__item_earbuds">
+        <div class="top-categories__content top-categories__content_earbuds">
+          <a href="#"><h3 class="top-categories__product-name top-categories__product-name_earbuds">Earbuds</h3></a>
+          <p class="top-categories__price top-categories__price_earbuds"></p>
+        </div>
+        <div class="top-categories__image top-categories__image_earbuds">
+          <a href="#">
+            <picture>
+              <source media="(max-width: 767px)" srcset="i/category-earbuds/category-earbuds-480.png, i/category-earbuds/category-earbuds-960.png 2x, i/category-earbuds/category-earbuds-1440.png 3x"/>
+              <source media="(max-width: 1199px)" srcset="i/category-earbuds/category-earbuds-800.png, i/category-earbuds/category-earbuds-1200.png 2x, i/category-earbuds/category-earbuds-1800.png 3x"/>
+              <source media="(min-width: 1200px)" srcset="i/category-earbuds/category-earbuds-1200.png, i/category-earbuds/category-earbuds-2400.png 2x"/>
+              <img src="i/category-earbuds/category-earbuds.png" alt="earbuds category">
+            </picture>
+          </a>
+        </div>
+      </div>
+
+      <div class="top-categories__item top-categories__item_laptop">
+        <div class="top-categories__content top-categories__content_laptop">
+          <a href="#"><h3 class="top-categories__product-name top-categories__product-name_laptop">Laptops</h3></a>
+          <p class="top-categories__price top-categories__price_laptop"></p>
+        </div>
+        <div class="top-categories__image top-categories__image_laptop">
+          <a href="#">
+            <picture>
+              <source media="(max-width: 767px)" srcset="i/category-laptop/category-laptop-480.png, i/category-laptop/category-laptop-960.png 2x, i/category-laptop/category-laptop-1440.png 3x"/>
+              <source media="(max-width: 1199px)" srcset="i/category-laptop/category-laptop-800.png, i/category-laptop/category-laptop-1200.png 2x, i/category-laptop/category-laptop-1800.png 3x"/>
+              <source media="(min-width: 1200px)" srcset="i/category-laptop/category-laptop-1200.png, i/category-laptop/category-laptop-2400.png 2x"/>
+              <img src="i/category-laptop/category-laptop.png" alt="laptop category">
+            </picture>
+          </a>
+        </div>
+      </div>
+
+      <div class="top-categories__item top-categories__item_smart-watch">
+        <div class="top-categories__content top-categories__content_smart-watch">
+          <a href="#"><h3 class="top-categories__product-name top-categories__product-name_smart-watch">Smart watches</h3></a>
+          <p class="top-categories__price top-categories__price_smart-watch"></p>
+        </div>
+        <div class="top-categories__image top-categories__image_smart-watch">
+          <a href="#">
+            <picture>
+              <source media="(max-width: 767px)" srcset="i/category-watch/category-watch-480.png, i/category-watch/category-watch-960.png 2x, i/category-watch/category-watch-1440.png 3x"/>
+              <source media="(max-width: 1199px)" srcset="i/category-watch/category-watch-800.png, i/category-watch/category-watch-1200.png 2x, i/category-watch/category-watch-1800.png 3x"/>
+              <source media="(min-width: 1200px)" srcset="i/category-watch/category-watch-1200.png, i/category-watch/category-watch-2400.png 2x"/>
+              <img src="i/category-watch/category-watch.png" alt="smart-watch category">
+            </picture>
+          </a>
+        </div>
+      </div>
+
+      <div class="top-categories__item top-categories__item_phone">
+        <div class="top-categories__content top-categories__content_phone">
+          <a href="#"><h3 class="top-categories__product-name top-categories__product-name_phone">IPhone 14 Pro Max</h3></a>
+          <p class="top-categories__price top-categories__price_phone">1199$</p>
+        </div>
+        <div class="top-categories__image top-categories__image_phone">
+          <a href="#">
+            <picture>
+              <source media="(max-width: 767px)" srcset="i/category-phone/category-phone-480.png, i/category-phone/category-phone-960.png 2x, i/category-phone/category-phone-1440.png 3x"/>
+              <source media="(max-width: 1199px)" srcset="i/category-phone/category-phone-800.png, i/category-phone/category-phone-1200.png 2x, i/category-phone/category-phone-1800.png 3x"/>
+              <source media="(min-width: 1200px)" srcset="i/category-phone/category-phone-1200.png, i/category-phone/category-phone-2400.png 2x"/>
+              <img src="i/category-phone/category-phone.png" alt="phone category">
+            </picture>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Latest products -->
+  <section>
+    <div class="latest-products" id="latest-products">
+      <div class="latest-products__wrapper">
+        <div class="latest-products__item latest-products__item_label">
+          <h2>Latest products</h2>
+        </div>
+
+        <div class="latest-products__item latest-products__item_buds">
+          <div class="latest-products__content">
+            <a href="#"><h3 class="latest-products__name">OnePlus Buds Pro 2</h3></a>
+            <div class="latest-products__buttons">
+              <button class="latest-products__wishlist">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+              </button>
+              <button class="latest-products__cart">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+              </button>
+              <button class="latest-products__quick-view">
+                <a href="#"><i class="fa-solid fa-eye"></i></a>
+              </button>
+            </div>
+            <p class="latest-products__new-price">183</p>
+            <p class="latest-products__old-price latest-products__old-price_buds">229</p>
+            <div class="latest-products__reviews">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <div class="latest-products__promo latest-products__promo_buds">20</div>
+          <img class="latest-products__image" src="i/products/product-offer-buds-1-1.png">
+          <a class="latest-products__ref-image" href="#"><div class="latest-products__hover-image latest-products__hover-image_buds"></div></a>
+        </div>
+
+        <div class="latest-products__item latest-products__item_grinder">
+          <div class="latest-products__content">
+            <a href="#"><h3 class="latest-products__name">Preethi Eco Twin Mixer</h3></a>
+            <div class="latest-products__buttons">
+              <button class="latest-products__wishlist">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+              </button>
+              <button class="latest-products__cart">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+              </button>
+              <button class="latest-products__quick-view">
+                <a href="#"><i class="fa-solid fa-eye"></i></a>
+              </button>
+            </div>
+            <p class="latest-products__new-price">314</p>
+            <p class="latest-products__old-price latest-products__old-price_grinder">349</p>
+            <div class="latest-products__reviews">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <div class="latest-products__promo latest-products__promo_grinder">10</div>
+          <img class="latest-products__image" src="i/products/product-grinder-1.png">
+          <a class="latest-products__ref-image" href="#"><div class="latest-products__hover-image latest-products__hover-image_grinder"></div></a>
+        </div>
+
+        <div class="latest-products__item latest-products__item_drive">
+          <div class="latest-products__content">
+            <a href="#"><h3 class="latest-products__name">Seagate External HDD</h3></a>
+            <div class="latest-products__buttons">
+              <button class="latest-products__wishlist">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+              </button>
+              <button class="latest-products__cart">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+              </button>
+              <button class="latest-products__quick-view">
+                <a href="#"><i class="fa-solid fa-eye"></i></a>
+              </button>
+            </div>
+            <p class="latest-products__new-price">79</p>
+            <p class="latest-products__old-price latest-products__old-price_drive">1</p>
+            <div class="latest-products__reviews">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <div class="latest-products__promo latest-products__promo_drive"></div>
+          <img class="latest-products__image" src="i/products/product-drive-1.png">
+          <a class="latest-products__ref-image" href="#"><div class="latest-products__hover-image latest-products__hover-image_drive"></div></a>
+        </div>
+
+        <div class="latest-products__item latest-products__item_camera">
+          <div class="latest-products__content">
+            <a href="#"><h3 class="latest-products__name">Canon EOS M50 Mark II</h3></a>
+            <div class="latest-products__buttons">
+              <button class="latest-products__wishlist">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+              </button>
+              <button class="latest-products__cart">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+              </button>
+              <button class="latest-products__quick-view">
+                <a href="#"><i class="fa-solid fa-eye"></i></a>
+              </button>
+            </div>
+            <p class="latest-products__new-price">806</p>
+            <p class="latest-products__old-price latest-products__old-price_camera">849</p>
+            <div class="latest-products__reviews">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <div class="latest-products__promo latest-products__promo_camera">5</div>
+          <img class="latest-products__image" src="i/products/product-camera-1.png">
+          <a class="latest-products__ref-image" href="#"><div class="latest-products__hover-image latest-products__hover-image_camera"></div></a>
+        </div>
+
+        <div class="latest-products__item latest-products__item_notebook">
+          <div class="latest-products__content">
+            <a href="#"><h3 class="latest-products__name">Acer Swift 3 Laptop</h3></a>
+            <div class="latest-products__buttons">
+              <button class="latest-products__wishlist">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+              </button>
+              <button class="latest-products__cart">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+              </button>
+              <button class="latest-products__quick-view">
+                <a href="#"><i class="fa-solid fa-eye"></i></a>
+              </button>
+            </div>
+            <p class="latest-products__new-price">711</p>
+            <p class="latest-products__old-price latest-products__old-price_notebook">949</p>
+            <div class="latest-products__reviews">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <div class="latest-products__promo latest-products__promo_notebook">25</div>
+          <img class="latest-products__image" src="i/products/product-laptop-1.png">
+          <a class="latest-products__ref-image" href="#"><div class="latest-products__hover-image latest-products__hover-image_notebook"></div></a>
+        </div>
+
+        <div class="latest-products__item latest-products__item_speakers">
+          <div class="latest-products__content">
+            <a href="#"><h3 class="latest-products__name">JBL Charge 4</h3></a>
+            <div class="latest-products__buttons">
+              <button class="latest-products__wishlist">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+              </button>
+              <button class="latest-products__cart">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+              </button>
+              <button class="latest-products__quick-view">
+                <a href="#"><i class="fa-solid fa-eye"></i></a>
+              </button>
+            </div>
+            <p class="latest-products__new-price">102</p>
+            <p class="latest-products__old-price latest-products__old-price_speakers">120</p>
+            <div class="latest-products__reviews">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <div class="latest-products__promo latest-products__promo_speakers">15</div>
+          <img class="latest-products__image" src="i/products/product-spaker-1.png">
+          <a class="latest-products__ref-image" href="#"><div class="latest-products__hover-image latest-products__hover-image_speakers"></div></a>
+        </div>
+
+        <div class="latest-products__item latest-products__item_wireless-buds">
+          <div class="latest-products__content">
+            <a href="#"><h3 class="latest-products__name">JBL Tune 125TWS</h3></a>
+            <div class="latest-products__buttons">
+              <button class="latest-products__wishlist">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+              </button>
+              <button class="latest-products__cart">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+              </button>
+              <button class="latest-products__quick-view">
+                <a href="#"><i class="fa-solid fa-eye"></i></a>
+              </button>
+            </div>
+            <p class="latest-products__new-price">46</p>
+            <p class="latest-products__old-price latest-products__old-price_wireless-buds">49</p>
+            <div class="latest-products__reviews">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <div class="latest-products__promo latest-products__promo_wireless-buds">5</div>
+          <img class="latest-products__image" src="i/products/product-buds-2-1.png">
+          <a class="latest-products__ref-image" href="#"><div class="latest-products__hover-image latest-products__hover-image_wireless-buds"></div></a>
+        </div>
+
+        <div class="latest-products__item latest-products__item_game">
+          <div class="latest-products__content">
+            <a href="#"><h3 class="latest-products__name">Xbox Series S</h3></a>
+            <div class="latest-products__buttons">
+              <button class="latest-products__wishlist">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+              </button>
+              <button class="latest-products__cart">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+              </button>
+              <button class="latest-products__quick-view">
+                <a href="#"><i class="fa-solid fa-eye"></i></a>
+              </button>
+            </div>
+            <p class="latest-products__new-price">284</p>
+            <p class="latest-products__old-price latest-products__old-price_game">299</p>
+            <div class="latest-products__reviews">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+          </div>
+          <div class="latest-products__promo latest-products__promo_game">5</div>
+          <img class="latest-products__image" src="i/products/product-xbox-1.png">
+          <a class="latest-products__ref-image" href="#"><div class="latest-products__hover-image latest-products__hover-image_game"></div></a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Partners -->
+  <article>
+    <div class="partners">
+      <div class="partners__logo partners__logo_1">
+        <img src="i/brands/b1.webp">
+      </div>
+      <div class="partners__logo partners__logo_2">
+        <img src="i/brands/b2.webp">
+      </div>
+      <div class="partners__logo partners__logo_3">
+        <img src="i/brands/b3.webp">
+      </div>
+      <div class="partners__logo partners__logo_4">
+        <img src="i/brands/b4.webp">
+      </div>
+      <div class="partners__logo partners__logo_5">
+        <img src="i/brands/b5.webp">
+      </div>
+      <div class="partners__logo partners__logo_6">
+        <img src="i/brands/b6.webp">
+      </div>
+    </div>
+  </article>
+
+  <!-- Limited offers -->
+  <section>
+    <div class="limited-offers" id="limited-offers">
+
+      <div class="limited-offers__item limited-offers__item_label">
+        <h2>Limited offers</h2>
+      </div>
+      <div class="limited-offers__wrapper">
+        <div class="limited-offers__item limited-offers__item_camera">
+          <div class="limited-offers__content limited-offers__content_camera">
+            <a href="#" class="limited-offers__name"><h3>Xiaomi Mi Wireless Mouse</h3></a>
+            <div class="limited-offers__reviews">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="limited-offers__prices">
+              <p class="limited-offers__new-price">36</p>
+              <p class="limited-offers__old-price">49</p>
+            </div>
+            <p class="limited-offers__description">Mouse is wireless and rechargeable, with an optimized foot design that lets...</p>
+            <div id="limited-offers__timer-buds" class="limited-offers__timer">
+              <div class="limited-offers__timer-item">
+                <p class="limited-offers__days"></p>
+              </div>
+              <div class="limited-offers__timer-item">
+                <p class="limited-offers__hours"></p>
+              </div>
+              <div class="limited-offers__timer-item">
+                <p class="limited-offers__minutes"></p>
+              </div>
+              <div class="limited-offers__timer-item">
+                <p class="limited-offers__seconds"></p>
+              </div>
+            </div>
+            <div class="limited-offers__buttons">
+              <button class="limited-offers__wishlist">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+              </button>
+              <button class="limited-offers__cart">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+              </button>
+              <button class="limited-offers__quick-view limited-offers__quick-view_mouse">
+                <a href="#"><i class="fa-solid fa-eye"></i></a>
+              </button>
+            </div>
+          </div>
+          <div class="limited-offers__promo">25</div>
+          <img class="limited-offers__image" src="i/products/offer-mouse-1.png">
+          <a class="limited-offers__ref-image" href="#"><div class="limited-offers__hover-image limited-offers__hover-image_mouse"></div></a>
+        </div>
+        <div class="limited-overlay-offers limited-overlay-offers_mouse">
+          <div class="limited-overlay-offers__item limited-overlay-offers__item_camera">
+            <div class="limited-overlay-offers__button"><a href="#"><i class="fa-solid fa-xmark"></i></a></div>
+            <div class="limited-overlay-offers__content limited-overlay-offers__content_camera">
+              <a href="#" class="limited-overlay-offers__name"><h3>Xiaomi Mi Wireless Mouse</h3></a>
+              <div class="limited-overlay-offers__reviews">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="limited-overlay-offers__prices">
+                <p class="limited-overlay-offers__new-price">36</p>
+                <p class="limited-overlay-offers__old-price">49</p>
+              </div>
+              <p class="limited-overlay-offers__description">Mouse is wireless and rechargeable, with an optimized foot design that lets it glide smoothly across your desk.
+                The incredibly long-lasting internal battery will power your mouse for about a month or more between charges. It's ready to go straight out of the box and pairs automatically with your PC, and it includes a woven USB-C to USB-A that lets you pair and charge by connecting to a USB-A port on your PC.
+                </p>
+              <p class="limited-overlay-offers__timer-header">There is not much time remaining!</p>
+              <div id="limited-overlay-offers__timer-buds" class="limited-overlay-offers__timer">
+                <div class="limited-overlay-offers__timer-item">
+                  <p class="limited-overlay-offers__days limited-offers__days"></p>
+                  <p class="limited-overlay-offers__line limited-overlay-offers__days-line">days</p>
+                </div>
+                <div class="limited-overlay-offers__timer-item">
+                  <p class="limited-overlay-offers__hours limited-offers__hours"></p>
+                  <p class="limited-overlay-offers__line limited-overlay-offers__hour-line">hours</p>
+                </div>
+                <div class="limited-overlay-offers__timer-item">
+                  <p class="limited-overlay-offers__minutes limited-offers__minutes"></p>
+                  <p class="limited-overlay-offers__line limited-overlay-offers__minutes-line">minutes</p>
+                </div>
+                <div class="limited-overlay-offers__timer-item">
+                  <p class="limited-overlay-offers__seconds limited-offers__seconds"></p>
+                  <p class="limited-overlay-offers__line limited-overlay-offers__seconds-line">seconds</p>
+                </div>
+              </div>
+              <div class="limited-overlay-offers__buttons">
+                <button class="limited-overlay-offers__wishlist">
+                  <a href="#"><i class="fa-solid fa-heart"></i></a>
+                </button>
+                <button class="limited-overlay-offers__cart">
+                  <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                </button>
+              </div>
+            </div>
+            <div class="limited-overlay-offers__promo">25</div>
+            <a class="limited-overlay-offers__ref-image" href="#"><div class="limited-overlay-offers__hover-image limited-overlay-offers__hover-image_mouse"></div></a>
+          </div>
+        </div>
+
+        <div class="limited-offers__item limited-offers__item_watch">
+          <div class="limited-offers__content limited-offers__content_watch">
+            <a href="#" class="limited-offers__name"><h3>Apple Watch Series 7</h3></a>
+            <div class="limited-offers__reviews">
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+              <i class="fa-solid fa-star"></i>
+            </div>
+            <div class="limited-offers__prices">
+              <p class="limited-offers__new-price">629</p>
+              <p class="limited-offers__old-price">699</p>
+            </div>
+            <p class="limited-offers__description">The larger display enhances the entire experience, making Apple Watch...</p>
+            <div id="limited-offers__timer-watch" class="limited-offers__timer">
+              <div class="limited-offers__timer-item">
+                <p class="limited-offers__days"></p>
+              </div>
+              <div class="limited-offers__timer-item">
+                <p class="limited-offers__hours"></p>
+              </div>
+              <div class="limited-offers__timer-item">
+                <p class="limited-offers__minutes"></p>
+              </div>
+              <div class="limited-offers__timer-item">
+                <p class="limited-offers__seconds"></p>
+              </div>
+            </div>
+            <div class="limited-offers__buttons">
+              <button class="limited-offers__wishlist">
+                <a href="#"><i class="fa-solid fa-heart"></i></a>
+              </button>
+              <button class="limited-offers__cart">
+                <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+              </button>
+              <button class="limited-offers__quick-view limited-offers__quick-view_camera">
+                <a href="#"><i class="fa-solid fa-eye"></i></a>
+              </button>
+            </div>
+          </div>
+          <div class="limited-offers__promo">10</div>
+          <img class="limited-offers__image" src="i/products/offer-watch-1.png">
+          <a class="limited-offers__ref-image" href="#"><div class="limited-offers__hover-image limited-offers__hover-image_watch"></div></a>
+        </div>
+        <div class="limited-overlay-offers limited-overlay-offers_camera">
+          <div class="limited-overlay-offers__item limited-overlay-offers__item_camera">
+            <div class="limited-overlay-offers__button"><a href="#"><i class="fa-solid fa-xmark"></i></a></div>
+            <div class="limited-overlay-offers__content limited-overlay-offers__content_camera">
+              <a href="#" class="limited-overlay-offers__name"><h3>Apple Watch Series 7</h3></a>
+              <div class="limited-overlay-offers__reviews">
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+              </div>
+              <div class="limited-overlay-offers__prices">
+                <p class="limited-overlay-offers__new-price">629</p>
+                <p class="limited-overlay-offers__old-price">699</p>
+              </div>
+              <p class="limited-overlay-offers__description">To build the ultimate sports watch, we crafted every element with painstaking attention to detail for unparalleled performance. Titanium strikes the perfect balance between weight, ruggedness, and corrosion resistance. The case rises up to surround the flat sapphire crystal and protect it from edge impacts. The Digital Crown is larger and the side button is raised from the case, making them easier to use.</p>
+              <p class="limited-overlay-offers__timer-header">There is not much time remaining!</p>
+              <div id="limited-overlay-offers__timer-watch" class="limited-overlay-offers__timer">
+                <div class="limited-overlay-offers__timer-item">
+                  <p class="limited-overlay-offers__days limited-offers__days"></p>
+                  <p class="limited-overlay-offers__line limited-overlay-offers__days-line">days</p>
+                </div>
+                <div class="limited-overlay-offers__timer-item">
+                  <p class="limited-overlay-offers__hours limited-offers__hours"></p>
+                  <p class="limited-overlay-offers__line limited-overlay-offers__hour-line">hours</p>
+                </div>
+                <div class="limited-overlay-offers__timer-item">
+                  <p class="limited-overlay-offers__minutes limited-offers__minutes"></p>
+                  <p class="limited-overlay-offers__line limited-overlay-offers__minutes-line">minutes</p>
+                </div>
+                <div class="limited-overlay-offers__timer-item">
+                  <p class="limited-overlay-offers__seconds limited-offers__seconds"></p>
+                  <p class="limited-overlay-offers__line limited-overlay-offers__seconds-line">seconds</p>
+                </div>
+              </div>
+              <div class="limited-overlay-offers__buttons">
+                <button class="limited-overlay-offers__wishlist">
+                  <a href="#"><i class="fa-solid fa-heart"></i></a>
+                </button>
+                <button class="limited-overlay-offers__cart">
+                  <a href="#"><i class="fa-solid fa-cart-shopping"></i></a>
+                </button>
+              </div>
+            </div>
+            <div class="limited-overlay-offers__promo">10</div>
+            <a class="limited-overlay-offers__ref-image" href="#"><div class="limited-overlay-offers__hover-image limited-overlay-offers__hover-image_watch"></div></a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Best product -->
+  <article>
+    <div class="best-product">
+      <div class="best-product__wrapper">
+        <div class="best-product__video">
+          <iframe width="100%" height="100%" src="https://www.youtube.com/embed/jGmiYzCPnSE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <div class="best-product__content">
+          <h3 class="best-product__header">GoPro HERO 10</h3>
+          <p class="best-product__text">Be smart, action camera</p>
+          <p class="best-product__description">More power. More clarity. More stability. The groundbreaking HERO 10 sports...</p>
+          <button class="best-product__button"><a href="#">shop now</a></button>
+        </div>
+      </div>
+    </div>
+  </article>
+
+  <!-- Creator/Subscription box -->
+  <section>
+  <div class="creator-newsletter">
+
+  <!-- Creator -->
+  <article>
+    <div class="creator">
+      <div class="creator__content">
+        <div class="creator__header">
+          <p class="creator__name">Our customers are always happy customers</p>
+        </div>
+        <p class="creator__description">A simple black box, maybe with a few blinking lights - such a visually boring PC is not your style at all? Then simply...</p>
+      </div>
+      <div class="creator__image">
+          <picture>
+            <source media="(max-width: 767px)" srcset="i/designer/designer-480.png, i/designer/designer-960.png 2x, i/designer/designer-1440.png 3x"/>
+            <source media="(max-width: 1199px)" srcset="i/designer/designer-800.png, i/designer/designer-1200.png 2x, i/designer/designer-1800.png 3x"/>
+            <source media="(min-width: 1200px)" srcset="i/designer/designer-1200.png, i/designer/designer-2400.png 2x"/>
+            <img src="i/designer/designer.png" alt="phone category">
+          </picture>
+      </div>
+    </div>
+  </article>
+
+  <!-- Subscription box --> 
+  <div class="newsletter-follow">
+    <aside>
+      <div class="newsletter">
+        <form action="" class="newsletter__form">
+          <label class="newsletter__label" for = "email-input">Sign up for newsletter</label>
+          <div class="newsletter__input-button">
+            <input class="newsletter__input" name ="email-input" placeholder="Enter your email..." type="text">
+            <button class="newsletter__button" type="submit"><a href="#">subscribe</a></button>
+          </div>
+        </form>
+      </div>
+    </aside>
+    
+  <!-- Socials -->
+    <aside>
+      <div class="follow-us">
+        <p class="follow-us__text">Follow us:</p>
+        <div class="follow-us__icons">
+          <ul class="follow-us__list">
+            <li class="follow-us__logo follow-us__logo_facebook">
+              <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            </li>
+            <li class="follow-us__logo follow-us__logo_twitter">
+              <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            </li>
+            <li class="follow-us__logo follow-us__logo_pinterest">
+              <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+            </li>
+            <li class="follow-us__logo follow-us__logo_instagram">
+              <a href="#"><i class="fa-brands fa-instagram"></i></a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </aside>
+  </div>  
+
+  </div>
+  </section>  
+
+  <!-- Footer -->
+  <footer>
+    <div class="up-footer">
+      <div class="up-footer__wrapper">
+        <div class="up-footer__item up-footer__item_contact-us">
+          <div class="up-footer__header up-footer__closed up-footer__header_contact-us">
+            <p>Contact us</p>
+          </div>
+          <ul class="up-footer__submenu up-footer__submenu_address">
+            <li>
+              <div class="up-footer__address map-button">
+                <i class="fa-sharp fa-solid fa-location-dot"></i>
+                <a href="#">3164 NW 72nd Ave, Miami, FL 33122, United States</a>
+              </div>
+            </li>
+            <li>
+              <div class="up-footer__number">
+                <i class="fa-solid fa-phone-volume"></i>
+                <a href="tel:610-403-403" title="tel:610-403-403">(+92) 0123 456 789</a>
+              </div>
+            </li>
+            <li>
+              <div class="up-footer__mail">
+                <i class="fa-solid fa-envelope"></i>
+                <a href="mailto:demo@demo.com" title="mailto:demo@demo.com">dzhusoleksiy@gmail.com</a>
+              </div>
+            </li>
+          </ul>
+        </div>
+
+        <div class="up-footer__item up-footer__item_information">
+          <div class="up-footer__header up-footer__closed up-footer__header_information">
+            <p>Information</p>
+          </div>
+          <ul class="up-footer__submenu">
+            <li><a href="#" title="About us">About us</a></li>
+            <li><a href="#" title="Delivery information">Delivery information</a></li>
+            <li><a href="#" title="Privacy policy">Privacy policy</a></li>
+            <li><a href="#" title="Terms & condition">Terms & condition</a></li>
+            <li><a href="#" title="Brands">Brands</a></li>
+          </ul>
+        </div>
+
+        <div class="up-footer__item up-footer__item_account">
+          <div class="up-footer__header up-footer__closed up-footer__header_account">
+            <p>My account</p>
+          </div>
+          <ul class="up-footer__submenu">
+            <li><a href="#" title="Login and register">Login & register</a></li>
+            <li><a href="#" title="Order history">Order history</a></li>
+            <li><a href="#" title="Wishlist">Wishlist</a></li>
+            <li><a href="#" title="Newsletter">Newsletter</a></li>
+            <li><a href="#" title="Specials">Specials</a></li>
+          </ul>
+        </div>
+
+        <div class="up-footer__item up-footer__item_care">
+          <div class="up-footer__header up-footer__closed up-footer__header_care">
+            <p>Customer care</p>
+          </div>
+          <ul class="up-footer__submenu">
+            <li><a href="#" title="Contact us">Contact us</a></li>
+            <li><a href="#" title="Return policy">Return policy</a></li>
+            <li><a href="#" title="Sitemap">Sitemap</a></li>
+            <li><a href="#" title="Gift certificates">Gift certificates</a></li>
+            <li><a href="#" title="Affiliate">Affiliate</a></li>
+          </ul>
+        </div>
+
+        <div class="up-footer__item up-footer__item_legal">
+          <div class="up-footer__header up-footer__closed up-footer__header_legal">
+            <p>Electon legal</p>
+          </div>
+          <ul class="up-footer__submenu">
+            <li><a href="#" title="Return policy">Return policy</a></li>
+            <li><a href="#" title="Payment policy">Payment policy</a></li>
+            <li><a href="#" title="Adversting">Adversting</a></li>
+            <li><a href="#" title="Contact store">Contact store</a></li>
+            <li><a href="#" title="Help and support">Help & support</a></li>
+          </ul>
+        </div>
+      </div>  
+    </div>
+    
+    <div class="bot-footer">
+      <div class="bot-footer__wrapper">
+        <div class="bot-footer__content">
+          <p class="bot-footer__copyright">&#169 2023 ecommerce by Electon</p>
+          <div class="bot-footer__logo-payment">
+            <div class="bot-footer__logo"><img src="i/logo-white.png"></div>
+            <div class="bot-footer__payment-methods">
+              <div class="bot-footer__payment-methods__item bot-footer__payment-methods__item_visa">
+                <svg xmlns="http://www.w3.org/2000/svg" width="47" height="29">
+                  <use xlink:href="i/sprite.svg#visa"></use>
+                </svg>
+              </div>
+              <div class="bot-footer__payment-methods__item bot-footer__payment-methods__item_paypal">
+                <svg xmlns="http://www.w3.org/2000/svg" width="47" height="29">
+                  <use xlink:href="i/sprite.svg#paypal"></use>
+                </svg>
+              </div>
+              <div class="bot-footer__payment-methods__item bot-footer__payment-methods__item_mastercard">
+                <svg xmlns="http://www.w3.org/2000/svg" width="47" height="29">
+                  <use xlink:href="i/sprite.svg#mastercard"></use>
+                </svg>
+              </div>
+              <div class="bot-footer__payment-methods__item bot-footer__payment-methods__item_amex">
+                <svg xmlns="http://www.w3.org/2000/svg" width="47" height="29">
+                  <use xlink:href="i/sprite.svg#amex"></use>
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </footer>
+  
+  <!-- Scroll Button/Contact Form -->
+  <aside>
+    <div class="scroll-btn">
+      <button class="scroll-btn__itself">
+        <a href="#">
+        <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 384 512">><path d="M214.6 9.4c-12.5-12.5-32.8-12.5-45.3 0l-128 128c-12.5 12.5-12.5 32.8 0 45.3s32.8 12.5 45.3 0L160 109.3V480c0 17.7 14.3 32 32 32s32-14.3 32-32V109.3l73.4 73.4c12.5 12.5 32.8 12.5 45.3 0s12.5-32.8 0-45.3l-128-128z"/></svg>
+        </a>  
+      </button>
+    </div>
+    <div class="contact">
+      <button class="contact__button contact-button">
+        <a href="#">
+          <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 512 512"><path d="M48 64C21.5 64 0 85.5 0 112c0 15.1 7.1 29.3 19.2 38.4L236.8 313.6c11.4 8.5 27 8.5 38.4 0L492.8 150.4c12.1-9.1 19.2-23.3 19.2-38.4c0-26.5-21.5-48-48-48H48zM0 176V384c0 35.3 28.7 64 64 64H448c35.3 0 64-28.7 64-64V176L294.4 339.2c-22.8 17.1-54 17.1-76.8 0L0 176z"/></svg>
+        </a>
+      </button>
+      <div class="contact__form">
+        <button class="contact__closure-button contact-button"><a href="#"><i class="fa-solid fa-xmark"></i></a></button>
+        <p class="contact__header">Do you have any questions?</p>
+        <form onsubmit="sendEmail (); reset(); return false;"> 
+          <input type="text" id="name" placeholder="Name" required>
+          <input type="email" id="email" placeholder="Email" required>
+          <input type="text" id="phone" placeholder="Phone number" required>
+          <textarea id="message" rows="4" placeholder="How can we help you?" required></textarea>
+          <div class="contact__message"><p class="form-message">Message was successfully sent!</p></div>
+          <button class="contact__submit-button" type="submit">Send</button>
+        </form>
+      </div>
+    </div>
+  </aside>
+
+  <!-- Map -->
+  <article>
+    <div class="map">
+      <div class="map-button map__button"><a href="#"><i class="fa-solid fa-xmark"></i></a></div>
+      <div id="map"></div>
+    </div>
+  </article>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.4/jquery.min.js" 
+    integrity="sha512-pumBsjNRGGqkPzKHndZMaAG+bir374sORyzM3uulLV14lN5LyykqNk8eEeUlUkB3U0M4FApyaHraT65ihJhDpQ==" 
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script src="js/script.js"></script>
+  </body>
+</html>

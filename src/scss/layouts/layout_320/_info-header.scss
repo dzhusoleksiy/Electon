@@ -1,0 +1,43 @@
+.info-header {
+    @include e (wrapper) {
+        height: 45px;
+    }
+    @include e(warranty-shipping) {
+        & p {
+            display: none;
+        }
+    }
+    @include e(help-number) {
+        display: flex;
+        align-items: center;
+        & p {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        & a {
+            padding-top: 10px;
+            padding-bottom: 10px;
+        }
+        }
+        @include e(registration) {
+        display: flex;
+        & i {
+            display: none;
+        }
+        & a {
+            display: none;
+        }
+        &::after {
+            content: none;
+        }
+        }
+        @include e(wishlist) {
+        display: flex;
+        & i {
+            display: none;
+        }
+        & a {
+            display: none;
+        }
+    }
+}

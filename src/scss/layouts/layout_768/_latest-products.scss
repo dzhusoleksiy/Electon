@@ -1,0 +1,42 @@
+.latest-products {
+    @include e (wrapper) {
+        width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        grid-template-columns: repeat(auto-fit, 3, fr);
+        grid-template-rows: repeat(auto-fit, 3, 1fr);
+        column-gap: 30px;
+    }
+    @include e (item) {
+        @include m (label) {
+            grid-column: 1 / 4;
+            grid-row: 1;
+        }
+        @include m (buds) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        @include m (drive) {
+            grid-column: 1;
+            grid-row: 3;
+        }
+        @include m (grinder) {
+            grid-column: 2;
+            grid-row: 2;
+        }
+        @include m (camera) {
+            grid-column: 2;
+            grid-row: 3;
+        }
+        @include m (notebook) {
+            display: flex;
+            grid-column: 3;
+            grid-row: 2;
+        }
+        @include m (wireless-buds) {
+            display: flex;
+            grid-column: 3;
+            grid-row: 3;
+        }
+    }
+}

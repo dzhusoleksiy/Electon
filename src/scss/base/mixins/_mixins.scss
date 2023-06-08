@@ -1,0 +1,12 @@
+@mixin grey-line ($mart, $marr, $marb, $marl) {
+    &::after {
+        content: "";
+        display: block;
+        border-top: 1px solid $borderGrey;
+        margin-top: $mart;
+        margin-right: $marr;
+        margin-bottom: $marb;
+        margin-left: $marl;
+    }
+}
+

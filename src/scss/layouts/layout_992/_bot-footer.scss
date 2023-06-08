@@ -1,0 +1,13 @@
+.bot-footer {
+    @include e (wrapper) {
+        width: 950px;
+    }
+    @include e (content) {
+        flex-direction: row;
+        padding-top: 20px;
+    }
+    @include e (logo) {
+        margin-right: 120px;
+        margin-left: 0;
+    }
+}

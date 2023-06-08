@@ -1,0 +1,52 @@
+.newsletter {
+    @include e (form) {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @include e (label) {
+        color: $textGrey;
+        font-size: rem(20px);
+        font-family: $baseFontFamily;
+        font-weight: $semiBoldFontWeight;
+        margin-bottom: 25px;
+    }
+    @include e (input-button) {
+        width: 100%; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    @include e (input) {
+        background-color: $backgroundGrey;
+        padding: 15px 20px;
+        width: 100%; 
+        border-radius: 5px;
+        margin-bottom: 15px;
+        &::placeholder {
+            color: $textGrey;
+            font-family: $baseFontFamily;
+            font-size: rem(14px);
+        }
+    }
+    @include e (button) {
+        & a {
+            display: inline-block;
+            height: 45px;
+            color: $textWhite;
+            background-color: $attentionRed;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-family: $baseFontFamily;
+            font-weight: $mediumFontWeight;
+            font-size: rem(14px);
+            padding: 15px 18px;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+        }
+        &:active {
+            transform: scale(0.95);
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+        }
+    }
+}

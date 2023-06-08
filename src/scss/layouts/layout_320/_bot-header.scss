@@ -1,0 +1,16 @@
+.bot-header {
+    height: 66.09px;
+    & p {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    }
+    @include e (search-bar) {
+        display: none;
+    }
+    @include e (ext-cart) {
+        display: none;
+    }
+    @include e (categories) {
+        display: none;
+    }
+}

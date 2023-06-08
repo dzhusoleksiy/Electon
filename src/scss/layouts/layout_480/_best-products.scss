@@ -1,0 +1,15 @@
+.best-product {
+    @include e (text) {
+        font-size: rem(17px);
+    }
+    @include e (header) {
+        font-size: rem(23px);
+    }
+    @include e (description) {
+        font-size: rem(17px);
+        line-height: rem(28px);
+    }
+    @include e (button) {
+        font-size: rem(17px);
+    }
+}

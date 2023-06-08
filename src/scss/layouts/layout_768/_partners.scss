@@ -1,0 +1,17 @@
+.partners {
+    width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 100px;
+    padding-bottom: 100px;
+    margin-bottom: 0;
+    border-bottom: none;
+    @include e (logo) {
+        @include m (4) {
+            display: flex;
+        }
+        @include m (5) {
+            display: flex;
+        }
+    }
+}

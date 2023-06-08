@@ -1,0 +1,231 @@
+.fixed {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1;
+}
+.bot-header {
+    background-color: $backgroundBlue;
+    @include e (wrapper) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    @include e (categories-wrapper) {
+        display: none;
+        position: relative;
+        width: 230px;
+        cursor: pointer;
+    }
+    @include e (categories) {
+        display: flex;
+        background-color: $attentionRed;
+        & a {
+            text-decoration: none;
+            margin-top: 14px;
+            margin-bottom: 14px;
+            color: $textWhite;
+            text-transform: uppercase;
+            padding: 10px 0 10px 20px;
+        }
+        & i {
+            color: $textWhite;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            align-self: center;
+        }
+    }
+    @include e (categories-menu) {
+        position: relative;
+        & ul {
+            border-radius: 5px;
+            box-shadow: 0 0 30px rgb(56, 56, 56);
+            & li:first-child {
+                border-top-left-radius: 5px;
+                border-top-right-radius: 5px;
+            }
+            & li:last-child {
+                border-bottom-left-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+        & ul:first-child {
+            & li:first-child {
+                border-top-left-radius: 0;
+                border-top-right-radius: 0;
+            }
+        }
+        }
+    }
+    @include e (categories-list) {
+        margin: 0;
+        position: absolute;
+        display: none;
+        z-index: 1;
+        padding-inline-start: 0;
+        list-style-type: none;
+        & li {
+            width: 230px;
+            background-color: $textWhite;
+            text-align: center;
+            &:hover {
+                background-color: $backgroundGrey;
+            }
+        }
+        & a {
+            padding-top: 10px;
+            padding-bottom: 10px;
+            display: inline-block;
+            width: 230px;
+            text-decoration: none;
+            font-family: $baseFontFamily;
+            font-size: $baseFontSize;
+            font-weight: $regularFontWeight;
+            color: $textGrey;
+        }
+    }
+    @include e (has-submenu) {
+        & ul {
+            display: none;
+            position: absolute;
+            left: 230px;
+            margin-top: -39px;
+            padding-inline-start: 0;
+            list-style-type: none;
+        }
+    }
+    @include e (cart-wrapper) {
+        position: relative;
+        cursor: pointer;
+    }
+    @include e (ext-cart) {
+        background-color: $attentionRed;
+        height: 100%;
+        & p {
+            color: $textWhite;
+            text-transform: uppercase;
+            padding: 9px 20px 9px 0;
+        }
+        & i {
+            color: $textWhite;
+            margin-left: 20px;
+            margin-right: 5px;
+            display: flex;
+            align-self: center;
+        }
+
+    }
+    @include e (cart-menu) {
+        z-index: 1;
+        display: none;
+        background-color: $backgroundGrey;
+        text-align: center;
+        position: absolute;
+        top: 66.39px;
+        right: 0;
+        width: 259.08px;
+        height: 425px;
+        align-items: center;
+        justify-content: center;
+        border-radius: 5px;
+        box-shadow: 0 0 30px rgb(56, 56, 56);
+    }
+    @include e (cart-header) {
+        font-family: $baseFontFamily;
+        font-weight: $semiBoldFontWeight;
+        font-size: rem(18px);
+        color: $textGrey;
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    @include e (cart-list) {
+        margin-left: auto;
+        margin-right: auto;
+        height: 275px;
+        width: 230px;
+        overflow-y: auto;
+        background-color: $textWhite;
+        border-radius: 5px;
+    }
+    @include e (checkout-button) {
+        margin-top: 37px;
+        &:active {
+            transform: scale(0.95);
+        }
+        & a {
+            border-radius: 5px;
+            text-decoration: none;
+            color: $textWhite;
+            font-family: $baseFontFamily;
+            font-size: rem(14px);
+            font-weight: $mediumFontWeight;
+            text-transform: uppercase;
+            padding: 15px 10px;
+            background-color: $attentionRed;
+            &:active {
+                transform: scale(0.95);
+                box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+            }
+        }
+    }
+    @include e (phrase-slider) {
+        width: 100%;
+    }
+    @include e (phrase-item) {
+        display: flex;
+        text-align: center;
+        justify-content: center;
+        margin-left: 40px;
+        margin-right: 40px;
+        & i {
+            display: flex;
+            align-self: center;
+            color: $textWhite;
+            margin-right: 10px;
+            font-size: rem(16px);
+        }
+        & p {
+        margin: 0;
+        display: flex;
+        flex-direction: row;
+        align-self: center;
+        color: $textWhite;
+        text-transform: uppercase;
+        font-size: rem(14px);
+        }
+    }
+    @include e (search-bar) {
+        margin-left: auto;
+        margin-right: 20px;
+        display: flex;
+        flex-basis: 45%;
+        align-self: center;
+        background-color: $textWhite;
+        border-radius: 5px;
+    }
+    @include e (input) {
+        padding: 15px;
+        width: 100%;
+        &::placeholder {
+            color: $textLighterGrey;
+            font-family: $baseFontFamily;
+            font-size: rem(14px);
+        }
+    }
+    @include e (form) {
+        width: 100%;
+        position: relative;
+    }
+    @include e (search-button) {
+        position: absolute;
+        right: 5px;
+        top: 15px;
+        background-color: $textWhite;
+        padding-right: 10px; 
+        & a {
+            color: $textLighterGrey;
+            font-family: $baseFontFamily;
+            font-size: rem(14px);
+        }
+    }
+}

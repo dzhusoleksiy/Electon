@@ -1,0 +1,16 @@
+.partners {
+    @include e (logo) {
+        @include m (3) {
+            display: none;
+        }
+        @include m (4) {
+            display: none;
+        }
+        @include m (5) {
+            display: none;
+        }
+        @include m (6) {
+            display: none;
+        }
+    }
+}

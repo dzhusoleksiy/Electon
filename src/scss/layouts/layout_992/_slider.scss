@@ -1,0 +1,26 @@
+.main-slider {
+    @include e (banner) {
+        height: 420px;
+        & img {
+            height: 420px;
+        }
+    }
+    @include e(content) {
+        position: absolute;
+        width: 155px;
+        top: 80px;
+        left: 80px;
+    }
+    @include e(text) {
+        font-size: rem(18px);
+    }
+    @include e (header) {
+        font-size: rem(52px);
+    }
+    @include e (button) {
+        font-size: rem(16px);
+    }
+    @include e (arrows) {
+        top: 560px;
+    }
+}

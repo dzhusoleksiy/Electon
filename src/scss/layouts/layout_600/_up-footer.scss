@@ -1,0 +1,81 @@
+.up-footer {
+    @include e (wrapper) {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, 3, 1fr);
+        grid-template-rows: repeat(auto-fit, 2, 1fr);
+    }
+    @include e (item) {
+        & i {
+            margin-right: 8px;
+            font-size: rem(14px);
+            color: $attentionRed;
+        }
+        @include m (contact-us) {
+            grid-column: 1 / 3;
+            grid-row: 1;
+        }
+        @include m (information) {
+            grid-column: 3;
+            grid-row: 1;
+        }
+        @include m (account) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        @include m (care) {
+            grid-column: 2;
+            grid-row: 2;
+        }
+        @include m (legal) {
+            grid-column: 3;
+            grid-row: 2;
+        }
+    }
+    @include e (address) {
+        display: flex;
+        & p {
+            font-family: $baseFontFamily;
+            font-size: rem(14px);
+            color: $textLighterGrey;
+            font-weight: $mediumFontWeight;
+        }
+    }
+    @include e (number) {
+        display: flex;
+    }
+    @include e (mail) {
+        display: flex;
+    }
+    @include e (header) {
+        border-bottom: none;
+        & i {
+            display: none;
+        }
+        &::after {
+            content: none;
+        }
+    }
+    & p {
+        padding-top: 0;
+        padding-bottom: 0;
+    }
+    & ul {
+        display: block;
+        padding-inline-start: 0;
+    }
+    & li {
+        display: block;
+        font-family: $baseFontFamily;
+        font-size: rem(14px);
+        color: $textLighterGrey;
+        font-weight: $mediumFontWeight;
+        margin-bottom: 15px;
+    }
+    & a {
+        text-decoration: none;
+        font-family: $baseFontFamily;
+        font-size: rem(14px);
+        color: $textLighterGrey;
+        font-weight: $mediumFontWeight;
+    }
+}

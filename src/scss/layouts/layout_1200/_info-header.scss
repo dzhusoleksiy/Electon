@@ -1,0 +1,25 @@
+.info-header {
+    @include e (wrapper) {
+        width: 1200px;
+        justify-content: space-between; 
+    }
+    @include e(warranty-shipping) {
+        display: flex;
+        align-self: center;
+        & p {
+            display: block;
+            margin-left: 120px;
+            margin-right: 180px;
+        }
+    }
+    @include e (help-number) {
+        margin-right: 0;
+        & p {
+            padding-top: 0;
+            padding-bottom: 0;
+        }
+    }
+    @include e(wishlist) {
+        margin-left: -35px;
+    }
+}

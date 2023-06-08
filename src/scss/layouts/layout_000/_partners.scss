@@ -1,0 +1,17 @@
+.partners {
+    display: flex;
+    justify-content: space-around;
+    align-content: center;
+    margin-bottom: 30px;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    border-bottom: 1px solid $borderGrey;
+    @include e (logo) {
+        & img {
+        opacity: 0.5;
+        width: 105px;
+        height: 105px;
+        max-width: 100%;
+    }
+}
+}

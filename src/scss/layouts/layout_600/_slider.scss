@@ -1,0 +1,35 @@
+.main-slider {
+    @include e (arrows) {
+        top: 515px;
+    }
+    @include e(content) {
+        width: 170px;
+        top: 75px;
+        left: 50px;
+    }
+    @include e(text) {
+        font-size: rem(18px);
+        font-weight: $mediumFontWeight;
+        margin-top: 0;
+        margin-bottom: 22px;
+    }
+    @include e (header) {
+        font-size: rem(40px);
+        font-weight: $semiBoldFontWeight;
+        margin-top: 0;
+        margin-bottom: 25px;
+    }
+    @include e (button) {
+        background-color: $attentionRed;
+        border-radius: 5px;
+        & a {
+            padding: 15px 22px;
+            text-decoration: none;
+            color: $textWhite;
+            font-family: $baseFontFamily;
+            font-weight: $mediumFontWeight;
+            font-size: rem(16px);
+            text-transform: uppercase;
+        }
+    }
+}

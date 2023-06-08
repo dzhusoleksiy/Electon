@@ -1,0 +1,177 @@
+.limited-offers {
+    @include e (item) {
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        border: 1px solid $borderGrey;
+        border-radius: 5px;
+        overflow: hidden;
+        & img {
+            order: -1;
+            width: 100%;
+            max-width: 100%;
+            object-fit: cover;
+            height: 250px;
+        }
+        @include m (watch) {
+            display: none;
+        }
+        @include m (label) {
+            border: none;
+            text-align: center;
+            & h2 {
+                color: $textGrey;
+                font-family: $baseFontFamily;
+                font-size: rem(24px);
+                font-weight: $semiBoldFontWeight;
+            }
+        }
+    }
+    @include e (name) {
+        text-decoration: none;
+        color: $backgroundBlue;
+        font-family: $baseFontFamily;
+    }
+    @include e (content) {
+        margin: 0 15px 15px 15px;
+        & h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+            font-size: rem(24px);
+        }
+    }
+    @include e (prices) {
+        display: flex;
+        margin-bottom: 15px;
+        & p {
+            margin-right: 10px;
+            &::before {
+                content: "$";
+            }
+        }
+    }
+    @include e (new-price) {
+        margin-top: 0;
+        margin-bottom: 0;
+        color: $attentionRed;
+        font-weight: $semiBoldFontWeight;
+    }
+    @include e (old-price) {
+        text-decoration: line-through;
+        color: $borderGrey;
+        margin: 0;
+    }
+    @include e (reviews) {
+        color: $priceGrey;
+        margin-top: 0;
+        margin-bottom: 15px;
+        & i {
+            font-size: rem(14px);
+        }
+    }
+    @include e (description) {
+        color: $textGrey;
+        font-family: $baseFontFamily;
+        font-size: rem(14px);
+        font-weight: $regularFontWeight;
+        margin-top: 0;
+        margin-bottom: 15px;
+        line-height: rem(25px);
+    }
+    @include e (buttons) {
+        margin-left: -5px;
+        order: -1;
+        & a {
+            text-decoration: none;
+            color: $priceGrey;
+            display: inline-block;
+            border-radius: 5px;
+            border: 1px solid $borderGrey;
+            padding: 10px;
+            margin: 5px;
+        }
+        & i {
+            font-size: rem(18px);
+        } 
+    }
+    @include e (timer) {
+        margin-left: -5px;
+        display: flex;
+        margin-bottom: 15px;
+    }
+    @include e (timer-item) {
+        position: relative;
+        border-radius: 5px;
+        background-color: $attentionRed;
+        margin: 5px;
+        min-width: 45px;
+        min-height: 45px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        & p {
+            margin: 0;
+            color: $textWhite;
+            padding: 10px;
+            font-family: $baseFontFamily;
+            font-size: rem(20px);
+            font-weight: $semiBoldFontWeight;
+        }
+        &::after {
+            content: ":";
+            position: absolute;
+            margin-left: 55px;
+            font-family: $baseFontFamily;
+            font-size: rem(20px);
+            font-weight: $semiBoldFontWeight;
+            color: $backgroundBlue;
+        }
+        &:last-child::after {
+            content: "";
+        }
+    }
+    @include e (promo) {
+        position: absolute;
+        right: 15px;
+        top: 15px;
+        padding: 5px 10px;
+        border-radius: 5px;
+        color: $textWhite;
+        font-size: rem(12px);
+        font-family: $baseFontFamily;
+        font-weight: $mediumFontWeight;
+        background-color: $backgroundBlue;
+        &::before {
+            content: "-";
+        }
+        &::after {
+            content: "%";
+        }
+    }
+    @include e (ref-image) {
+        order: -1;
+        display: inline-block;
+    }
+    @include e (hover-image) {
+        width: 306.25px;
+        max-width: 306.25px;
+        height: 350px;
+        transition: background-image 0.4s ease-in-out;
+        @include m (mouse) {
+            background: url("#{$i}products/offer-mouse-1.png") no-repeat;
+            background-size: cover;
+            &:hover {
+                background: url("#{$i}products/offer-mouse-2.png") no-repeat;
+                background-size: cover;
+            }
+        }
+        @include m (watch) {
+            background: url("#{$i}products/offer-watch-1.png") no-repeat;
+            background-size: cover;
+            &:hover {
+                background: url("#{$i}products/offer-watch-2.png") no-repeat;
+                background-size: cover;
+            }
+        }
+    }
+}

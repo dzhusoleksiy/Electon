@@ -1,0 +1,119 @@
+.contact {
+    z-index: 2;
+    position: relative;
+    @include e (button) {
+        position: fixed;
+        bottom: 30px;
+        right: 40px;
+        outline: none;
+        background-color: $backgroundBlue; 
+        cursor: pointer; 
+        padding: 15px; 
+        border-radius: 30px; 
+        & svg {
+            fill: currentColor;
+            display: flex;
+            align-self: center;
+            color: $textWhite; 
+        }
+        &:active {
+            transform: scale(0.95);
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+        }
+    }
+    @include e (closure-button) {
+        & a {
+            position: absolute;
+            top: 15px;
+            left: 15px;
+            font-size: 2rem;
+            color: $backgroundBlue;
+            }
+            &:active {
+                & a {
+                color: $attentionRed;
+                transform: scale(0.85);
+                transition-duration: 150ms;
+                }
+            }
+            &:hover {
+                & a {
+                color: $attentionRed;
+                }
+            }
+    }
+    @include e (header) {
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        font-family: $baseFontFamily;
+        font-size: rem(20px);
+        font-weight: $mediumFontWeight;
+        color: $textGrey;
+        margin-top: 20px;
+        margin-bottom: 36px;
+    }
+    @include e (message) {
+        height: 16.09px;
+        margin-top: 10px;
+        & p {
+        display: none;
+        padding-left: 10px;
+        padding-right: 10px;
+        text-align: center;
+        font-family: $baseFontFamily;
+        font-size: rem(14px);
+        font-weight: $mediumFontWeight;
+        color: $attentionRed;
+        margin: 0;
+        }
+    }
+    @include e (form) {
+        width: 500px;
+        background-color: $textWhite;
+        box-shadow: 0 0 30px rgb(56, 56, 56);
+        border-radius: 5px;
+        height: fit-content;
+        display: none;
+        position: fixed;
+        bottom: 110px;
+        right: 40px;
+        & form {
+            display: flex;
+            flex-direction: column;
+        }
+        & input {
+            background-color: $backgroundGrey;
+            margin: 0 10px 10px 10px;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        & textarea {
+            border-radius: 5px;
+            background-color: $backgroundGrey;
+            margin-left: 10px;
+            margin-right: 10px;
+            padding: 10px;
+            resize: none;
+            outline: none;
+        }
+    }
+    @include e (submit-button) {
+        cursor: pointer;
+        width: 30%;
+        border-radius: 5px;
+        margin-top: 10px;
+        margin-bottom: 20px;
+        align-self: center;
+        padding: 10px 20px;
+        background-color: $backgroundBlue;
+        color: $textWhite;
+        font-family: $baseFontFamily;
+        font-size: rem(14px);
+        font-weight: $regularFontWeight;
+        &:active {
+            transform: scale(0.95);
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+        }
+    }
+}

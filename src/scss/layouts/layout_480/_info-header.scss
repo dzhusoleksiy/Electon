@@ -1,0 +1,38 @@
+.info-header {
+@include e (help-number) {
+    line-height: 25px;
+    display: flex;
+    flex-wrap: wrap;
+    flex-basis: 300px;
+    margin-right: auto;
+    margin-left: 10px;
+}
+@include e(registration) {
+    & i {
+        display: initial;
+    }
+    & a {
+        display: initial;
+    }
+    &::after {
+        content: "|";
+        margin-left: 5px;
+        margin-right: 5px;
+        display: flex;
+        align-self: center;
+        color: $textLighterGrey;
+        font-family: $baseFontFamily;
+        font-weight: $mediumFontWeight;
+        text-decoration: none;
+        font-size: rem(14px);
+    }
+    }
+    @include e(wishlist) {
+    & i {
+        display: initial;
+    }
+    & a {
+        display: initial;
+    }
+    }
+}

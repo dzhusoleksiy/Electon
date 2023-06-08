@@ -1,0 +1,10 @@
+.bot-footer {
+    @include e (logo-payment) {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;  
+    }
+    @include e (payment-methods) {
+        padding-top: 7px;
+    }
+}

@@ -1,0 +1,96 @@
+.latest-products {
+    scroll-margin-top: 31.08px;
+    @include e (wrapper) {
+        width: 1200px;
+        grid-template-columns: repeat(auto-fit, 4, fr);
+        grid-template-rows: repeat(auto-fit, 3, 1fr);
+        column-gap: 30px;
+    }
+    @include e (item) {
+        @include m (label) {
+            grid-column: 1 / 5;
+            grid-row: 1;
+        }
+        @include m (buds) {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        @include m (drive) {
+            grid-column: 1;
+            grid-row: 3;
+        }
+        @include m (grinder) {
+            grid-column: 2;
+            grid-row: 2;
+        }
+        @include m (camera) {
+            grid-column: 2;
+            grid-row: 3;
+        }
+        @include m (notebook) {
+            display: flex;
+            grid-column: 3;
+            grid-row: 2;
+        }
+        @include m (wireless-buds) {
+            display: flex;
+            grid-column: 3;
+            grid-row: 3;
+        }
+        @include m (speakers) {
+            display: flex;
+            grid-column: 4;
+            grid-row: 2;
+        }
+        @include m (game) {
+            display: flex;
+            grid-column: 4;
+            grid-row: 3;
+        }
+    }
+    @include e (reviews) {
+        margin: 15px 0 20px 0;
+        width: fit-content;
+        display: flex;
+        justify-self: center;
+        align-self: center;
+        & i {
+            font-size: rem(18px);
+            margin: 0;
+            cursor: pointer;
+            color: $priceGrey;
+            text-shadow: none;
+            transition: color 200ms,
+            text-shadow 200ms;
+            transition-delay: 0;
+            &:hover ~ i {
+                color: $priceGrey;
+                text-shadow: none;
+                transition: color 200ms,
+                text-shadow 200ms;
+                transition-delay: 0;
+            }
+        }
+        &:hover {
+            & i {
+                color: #fc0;
+            }
+        }
+    }
+    @include e (image) {
+        display: none;
+    }
+    @include e (hover-image) {
+        display: block;
+    }
+    @include e (buttons) {
+        & a {
+            transition:  all 200ms ease-in-out;
+            &:hover {
+                background-color: $priceGrey;
+                color: $textWhite;
+                border: 1px solid $priceGrey;
+            }
+        }
+    }
+}

@@ -1,0 +1,27 @@
+.top-categories {
+    scroll-margin-top: 36.08px;
+    width: 1200px;
+    column-gap: 35px;
+    row-gap: 30px;
+    @include e (image) {
+        & img {
+            height: 230px;
+        }
+        @include m (gaming) {
+            & img {
+                height: 494px;
+            }
+        }
+    }
+    @include e (item) {
+        cursor: pointer;
+        & img {
+            transition:  all 200ms ease-in-out;
+        }
+        &:hover {
+            & img {
+                box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+            }
+        }
+    }
+}

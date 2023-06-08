@@ -1,0 +1,42 @@
+.up-header {
+    z-index: 3;
+    @include e (wrapper) {
+        width: 1200px;
+        justify-content: space-between;
+    } 
+    @include e (ext-menu) {
+        display: flex;
+    }
+    @include e (compr-menu-button) {
+        display: none;
+    } 
+    @include e (compr-cart-button) {
+        display: none;
+    } 
+    @include e (main-number) {
+        margin-left: auto;
+    }
+    @include e (site-logo) {
+        animation: rotate 6s infinite;
+        @keyframes rotate{
+            0% { transform: rotate(0) }
+            17% { transform: rotate(60deg) }
+            34% { transform: rotate(120deg) }
+            51% { transform: rotate(180deg) }
+            68% { transform: rotate(240deg) }
+            85% { transform: rotate(300deg) }
+            100% { transform: rotate(360deg) }
+        }
+    }
+    @include e (number-image) {
+        animation: shaking 0.45s infinite;
+        @keyframes shaking {
+            0% { transform: translateX(0) }
+            25% { transform: translateX(1.5px) }
+            50% { transform: translateX(-1.5px) }
+            75% { transform: translateX(1.5px) }
+            100% { transform: translateX(0) }
+        }
+    }
+}
+

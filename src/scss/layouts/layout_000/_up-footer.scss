@@ -1,0 +1,80 @@
+.up-footer {
+    background-color: $backgroundGrey;
+    @include e (header) {
+        border-bottom: 1px solid $borderGrey;
+        display: flex;
+        @include m (legal) {
+            border-bottom: none;
+        }
+        &::after {
+            content: ("+");
+            font-size: rem(20px);
+            margin-left: auto;
+            align-self: center;
+            font-family: $baseFontFamily;
+            font-weight: $mediumFontWeight;
+            color: $textGrey;
+        }
+        &.up-footer__opened {
+            border-bottom: 1px solid $borderGrey;
+            &::after {
+                content: ("-");
+                font-size: rem(20px);
+                margin-left: auto;
+                align-self: center;
+                font-family: $baseFontFamily;
+                font-weight: $mediumFontWeight;
+                color: $textGrey;
+            }
+        }
+    }
+    & p {
+        padding-top: 15px;
+        padding-bottom: 15px;
+        margin: 0;
+        font-family: $baseFontFamily;
+        font-size: rem(16px);
+        font-weight: $semiBoldFontWeight;
+        color: $textGrey;
+    }
+    @include e (submenu) {
+        display: none;
+        padding-inline-start: 10px;
+        list-style-type: none;
+        & i {
+            margin-right: 10px;
+        }
+        @include m (address) {
+            padding-inline-start: 0;
+        }
+    }
+    @include e (address) {
+        display: flex;
+        & i {
+            margin-left: 2px;
+            margin-right: 13px;
+            display: flex;
+            align-self: center;
+        }
+        & p {
+            font-family: $baseFontFamily;
+            font-size: rem(14px);
+            color: $textLighterGrey;
+            font-weight: $mediumFontWeight;
+        }
+    }
+    & li {
+        font-family: $baseFontFamily;
+        font-size: rem(14px);
+        color: $textLighterGrey;
+        font-weight: $mediumFontWeight;
+        margin-bottom: 15px;
+    }
+    & a {
+        text-decoration: none;
+        font-family: $baseFontFamily;
+        font-size: rem(14px);
+        color: $textLighterGrey;
+        font-weight: $mediumFontWeight;
+    }
+}

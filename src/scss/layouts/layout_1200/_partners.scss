@@ -1,0 +1,16 @@
+.partners {
+    width: 1200px;
+    @include e (logo) {
+        @include m (6) {
+            display: flex;
+        }
+        & img {
+            cursor: pointer;
+            transition: all .2s ease-in-out;
+            &:hover {
+                opacity: 1;
+                transform: scale(1.5);
+            }
+        }
+    }
+}

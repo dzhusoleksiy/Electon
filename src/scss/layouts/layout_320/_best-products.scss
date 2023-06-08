@@ -1,0 +1,17 @@
+.best-product {
+    @include e (wrapper) {
+        padding: 60px 10px;
+    }
+    @include e (text) {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    @include e (header) {
+        margin-top: 0;
+        margin-bottom: 15px;
+    }
+    @include e (description) {
+        margin-top: 0;
+        margin-bottom: 20px;
+    }
+}

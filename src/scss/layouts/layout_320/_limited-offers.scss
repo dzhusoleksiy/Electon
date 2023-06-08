@@ -1,0 +1,15 @@
+.limited-offers {
+    scroll-margin-top: 70px;
+    padding-left: 10px;
+    padding-right: 10px;
+    margin-bottom: 60px;
+    @include e (ref-image) {
+        display: none;
+    }
+    @include e (quick-view) {
+        display: none;
+    }
+}
+.limited-overlay-offers {
+    display: none;
+}

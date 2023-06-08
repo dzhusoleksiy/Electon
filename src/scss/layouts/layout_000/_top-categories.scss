@@ -1,0 +1,211 @@
+.top-categories {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, 2, 1fr);
+    grid-template-rows: repeat(auto-fit, 5, 1fr);
+    column-gap: 15px;
+    row-gap: 10px;
+    @include e (item) {
+        position: relative;
+        @include m (label) {
+            grid-column: 1 / 3;
+            grid-row: 1;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+            margin-top: 55px;
+            margin-bottom: 20px;
+            & h2 {
+                margin: 0;
+                color: $textGrey;
+                font-family: $baseFontFamily;
+                font-size: rem(33px);
+                font-weight: $semiBoldFontWeight;
+            }
+        }
+        @include m (gaming) {
+            grid-column: 1 / 3;
+            grid-row: 2;
+            margin-bottom: -1.2rem;
+        }
+        @include m (headphones) {
+            grid-column: 1;
+            grid-row: 3;
+        }
+        @include m (earbuds) {
+            grid-column: 2;
+            grid-row: 3;
+        }
+        @include m (laptop) {
+            grid-column: 1;
+            grid-row: 4;
+        }
+        @include m (smart-watch) {
+            grid-column: 2;
+            grid-row: 4;
+        }
+        @include m (phone) {
+            grid-column: 1 / 3;
+            grid-row: 5;
+            height: 100%;
+        }
+    }
+    @include e (content) {
+        position: absolute;
+        height: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        top: 15px;
+        left: 0;
+        right: 0;
+        text-align: center;
+        & a {
+            text-decoration: none;
+        }
+        @include m (gaming) {
+            text-align: left;
+            margin-left: 0;
+            margin-right: 0;
+            width: 155px;
+            left: 15px;
+            display: flex;
+            flex-direction: column;
+        }
+        @include m (phone) {
+            text-align: left;
+            margin-left: 0;
+            margin-right: 0;
+            left: 15px;
+            right: 15px;
+            display: flex;
+            justify-content: space-between;
+            height: initial;
+        }
+    }
+    @include e (category) {
+        order: -1;
+        color: $textLighterGrey;
+        font-family: $baseFontFamily;
+        font-size: rem(14px);
+        font-weight: $regularFontWeight;
+        margin-top: 0;
+        margin-bottom: 12px;
+    }
+    @include e (product-name) {
+        color: $textGrey;
+        font-family: $baseFontFamily;
+        font-size: rem(16px);
+        font-weight: $mediumFontWeight;
+        margin: 0;
+        @include m (gaming) {
+            font-size: rem(18px);
+            font-weight: $semiBoldFontWeight;
+            margin-bottom: 16px;
+            & a {
+                color: $textGrey;
+            }
+        }
+        @include m (phone) {
+            font-size: rem(18px);
+            font-weight: $semiBoldFontWeight;
+        }
+    }
+    @include e (price) {
+        color: $attentionRed;
+        font-family: $baseFontFamily;
+        font-weight: $semiBoldFontWeight;
+        font-size: rem(18px);
+        margin: 0;
+        @include m (headphones) {
+            color: $priceGrey;
+            font-weight: $mediumFontWeight;
+            font-size: rem(14px);
+            display: inline-block;
+            position: absolute;
+            bottom: 32px;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+        @include m (earbuds) {
+            color: $priceGrey;
+            font-weight: $mediumFontWeight;
+            font-size: rem(14px);
+            display: inline-block;
+            position: absolute;
+            bottom: 32px;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+        @include m (laptop) {
+            color: $priceGrey;
+            font-weight: $mediumFontWeight;
+            font-size: rem(14px);
+            display: inline-block;
+            position: absolute;
+            bottom: 32px;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+        @include m (smart-watch) {
+            color: $priceGrey;
+            font-weight: $mediumFontWeight;
+            font-size: rem(14px);
+            display: inline-block;
+            position: absolute;
+            bottom: 32px;
+            margin-left: auto;
+            margin-right: auto;
+            left: 0;
+            right: 0;
+            text-align: center;
+        }
+    }
+    @include e (arrow) {
+        position: absolute;
+        left: 15px;
+        bottom: 37.5px;
+        background-color: $attentionRed;
+        text-transform: uppercase;
+        font-family: $baseFontFamily;
+        font-weight: $mediumFontWeight;
+        font-size: rem(16px);
+        border-radius: 5px;
+        & a {
+            display: inline-block;
+            text-decoration: none;
+            color: $textWhite;
+            padding: 13px 15px;
+            border-radius: 5px;
+            &:active {
+                background-color: $attentionRed;
+            }
+        }
+        &:active {
+            transform: scale(0.95);
+            box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+        }
+    }
+    @include e (image) {
+        & img {
+            object-fit: cover;
+            border-radius: 5px; 
+            width: 100%;
+            max-width: 100%;
+        }
+        @include m (gaming) {
+            & img {
+                height: 100%;
+            }
+        }
+    }
+}

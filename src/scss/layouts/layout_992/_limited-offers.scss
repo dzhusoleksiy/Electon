@@ -1,0 +1,34 @@
+.limited-offers {
+    width: 950px;
+    @include e (item) {
+        & img {
+            height: 350px;
+        }
+    }
+    @include e (content) {
+        & h3 {
+            margin-top: 0;
+            margin-bottom: 10px;
+        }
+    }
+    @include e (new-price) {
+        font-size: rem(18px);
+    }
+    @include e (old-price) {
+        font-size: rem(18px);
+    }
+    @include e (reviews) {
+        & i {
+            font-size: rem(19px);
+        }
+    }
+    @include e (description) {
+        font-size: rem(18px);
+        line-height: rem(29px);
+    }
+    @include e (buttons) {
+        & i {
+            font-size: rem(22px);
+        } 
+    }
+}

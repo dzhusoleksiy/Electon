@@ -1,0 +1,27 @@
+.bot-header {
+    z-index: 2;
+    @include e (wrapper) {
+        width: 1200px;
+    }
+    @include e (categories-wrapper) {
+        display: block;
+    }
+    @include e (ext-cart) {
+        display: flex;
+    }
+    @include e (categories) {
+        display: flex;
+    }
+    @include e (phrase-slider) {
+        width: 35%;
+    }
+    @include e (phrase-item) {
+        margin-left: 0;
+        margin-right: 0;
+        width: 100%;
+    }
+    @include e (search-bar) {
+        flex-basis: 25%;
+        margin-left: 0;
+    }
+}

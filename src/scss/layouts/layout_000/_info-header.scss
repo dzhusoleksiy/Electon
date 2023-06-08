@@ -1,0 +1,73 @@
+.info-header {
+    display: flex;
+    order: -1;
+    background-color: $backgroundGrey; 
+    @include e (wrapper) {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+    @include e(help-number) {
+    & p {
+        margin: 0;
+        color: $textLighterGrey;
+        font-family: $baseFontFamily;
+        font-weight: $mediumFontWeight;
+        font-size: rem(14px);
+    }
+    & a {
+        color: $textLighterGrey;
+        font-family: $baseFontFamily;
+        font-weight: $mediumFontWeight;
+        text-decoration: none;
+        font-size: rem(14px);
+    }
+    }
+    @include e(warranty-shipping) {
+    & p {
+        color: $textLighterGrey;
+        font-family: $baseFontFamily;
+        font-weight: $mediumFontWeight;
+        font-size: rem(14px);
+    }
+    }
+    @include e(registration) {
+    display: flex;
+    & i {
+        display: flex;
+        align-self: center;
+        color: $textLighterGrey;
+        margin-right: 5px;
+        font-size: rem(14px);
+    }
+    & a {
+        display: flex;
+        align-self: center;
+        color: $textLighterGrey;
+        font-family: $baseFontFamily;
+        font-weight: $mediumFontWeight;
+        text-decoration: none;
+        font-size: rem(14px);
+    }
+    }
+    @include e(wishlist) {
+    display: flex;
+    & i {
+        display: flex;
+        align-self: center;
+        color: $textLighterGrey;
+        margin-right: 5px;
+        font-size: rem(14px);
+    }
+    & a {
+        display: flex;
+        align-self: center;
+        color: $textLighterGrey;
+        font-family: "Poppins", sans-serif;
+        font-weight: 500;
+        text-decoration: none;
+        font-size: rem(14px);
+        margin-right: 10px;
+    }
+    }
+}

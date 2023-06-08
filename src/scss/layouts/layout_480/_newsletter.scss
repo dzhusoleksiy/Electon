@@ -1,0 +1,13 @@
+.newsletter {
+    @include e (input-button) {
+        width: 450px; 
+        flex-direction: row;
+    }
+    @include e (input) {
+        margin-bottom: 0;
+    }
+    @include e (button) {
+        border-top-left-radius: 0;
+        border-bottom-left-radius: 0;
+    }
+}

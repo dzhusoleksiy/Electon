@@ -1,0 +1,42 @@
+.creator {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & p {
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+    }
+    @include e (content) {
+        display: flex;
+        flex-direction: column;
+    }
+    @include e (header) {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    @include e (name) {
+        margin-right: 5px;
+        color: $textGrey;
+        font-family: $baseFontFamily;
+        font-size: $baseFontSize;
+        font-weight: $semiBoldFontWeight;
+    }
+    @include e (description) {
+        color: $textGrey;
+        font-family: $baseFontFamily;
+        font-size: rem(14px);
+        font-weight: $regularFontWeight;
+        line-height: rem(25px);
+    }
+    @include e (image) {
+        order: -1;
+        width: 45%;
+        & img {
+            width: 100%;
+            max-width: 100%;
+            object-fit: contain;
+        }
+    }
+}
