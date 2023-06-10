@@ -1,4 +1,5 @@
 # "Electon" Electronics Store Webpage
+![image_2023-06-10_12-49-59](https://github.com/dzhusoleksiy/Electon/assets/121053807/75db13f2-e052-485a-8ce3-ddce5d8bb8bb)
 A fully responsive electronics store webpage was created using Webpack with the help of HTML, Sass, JavaScript, and jQuery. This project provides users with an intuitive interface. At the same time, it provides appropriate company with a convenient tool. Furthermore, the entire webpage was marked and created semantically correct to meet all possible needs of Search Engine Optimization. Not to mention, the fact that tech resources are used mindfully because animations are only active on personal computers, and different banner images load according to the appropriate screen resolutions.
 
 ## Technologies that were used
